@@ -4,7 +4,7 @@ The original source-code can be found at: https://github.com/credentials/irma_an
 This code is altered so it can be used by checker-framework.
 
 
-+++++++++++++++++++++++++++++++++++++++++++ ORIGINAL READ.md +++++++++++++++++++++++++++++++++++++++++++++
+++ ORIGINAL READ.md ++
 Source: https://github.com/credentials/irma_android_cardproxy
 
 # irma_android_cardproxy
