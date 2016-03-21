@@ -3,6 +3,7 @@ This repository is used to check the irma cardproxy app with a type-checker call
 The original source-code can be found at: https://github.com/credentials/irma_android_cardproxy
 This code is altered so it can be used by checker-framework.
 
+The local.properties file is adjusted for my laptop, change it to fit to your own system.
 
 ++ ORIGINAL READ.md ++
 
