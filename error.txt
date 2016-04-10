@@ -1,0 +1,451 @@
+$ ./gradlew build -info
+
+Starting Build
+Settings evaluated using empty settings script.
+Projects loaded. Root project using build file '/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/build.gradle'.
+Included projects: [root project 'irmaproxychecker']
+Evaluating root project 'irmaproxychecker' using build file '/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/build.gradle'.
+Compiling build file '/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/build.gradle' using StatementExtractingScriptTransformer.
+Compiling build file '/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/build.gradle' using BuildScriptTransformer.
+Creating configuration compile.
+Creating configuration apk.
+Creating configuration provided.
+Creating configuration wearApp.
+Creating configuration androidTestCompile.
+Creating configuration androidTestApk.
+Creating configuration androidTestProvided.
+Creating configuration androidTestWearApp.
+Creating configuration testCompile.
+Creating configuration testApk.
+Creating configuration testProvided.
+Creating configuration testWearApp.
+Creating configuration debugCompile.
+Creating configuration debugApk.
+Creating configuration debugProvided.
+Creating configuration debugWearApp.
+Creating configuration testDebugCompile.
+Creating configuration testDebugApk.
+Creating configuration testDebugProvided.
+Creating configuration testDebugWearApp.
+Creating configuration releaseCompile.
+Creating configuration releaseApk.
+Creating configuration releaseProvided.
+Creating configuration releaseWearApp.
+Creating configuration testReleaseCompile.
+Creating configuration testReleaseApk.
+Creating configuration testReleaseProvided.
+Creating configuration testReleaseWearApp.
+Resource missing. [HTTP GET: https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/com/android/support/support-v4/maven-metadata.xml]
+Failed to get resource: GET. [HTTP HTTP/1.1 400 Bad Request: https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/com/android/support/support-v4/]
+Resource missing. [HTTP GET: https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/com/android/support/support-v4/maven-metadata.xml]
+Failed to get resource: GET. [HTTP HTTP/1.1 400 Bad Request: https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/com/android/support/support-v4/]
+Resource missing. [HTTP GET: https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/com/android/support/support-v4/maven-metadata.xml]
+Failed to get resource: GET. [HTTP HTTP/1.1 400 Bad Request: https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/com/android/support/support-v4/]
+Resource missing. [HTTP GET: https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/com/android/support/support-v4/maven-metadata.xml]
+Failed to get resource: GET. [HTTP HTTP/1.1 400 Bad Request: https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/com/android/support/support-v4/]
+All projects evaluated.
+Selected primary task 'build' from project :
+Tasks to be executed: [task ':preBuild', task ':preDebugBuild', task ':compileDebugNdk', task ':checkDebugManifest', task ':preReleaseBuild', task ':prepareComEmbarkmobileZxingAndroidIntegration200Library', task ':prepareComEmbarkmobileZxingAndroidMinimal200Library', task ':prepareNetSfScubaScuba_sc_android007IrmaLibrary', task ':prepareOrgIrmacardAndroidIrma_android_library091Library', task ':prepareDebugDependencies', task ':compileDebugAidl', task ':compileDebugRenderscript', task ':generateDebugBuildConfig', task ':generateDebugAssets', task ':mergeDebugAssets', task ':generateDebugResValues', task ':generateDebugResources', task ':mergeDebugResources', task ':processDebugManifest', task ':processDebugResources', task ':generateDebugSources', task ':compileDebugJava', task ':preDexDebug', task ':dexDebug', task ':processDebugJavaRes', task ':validateDebugSigning', task ':packageDebug', task ':zipalignDebug', task ':assembleDebug', task ':checkReleaseManifest', task ':prepareReleaseDependencies', task ':compileReleaseAidl', task ':compileReleaseRenderscript', task ':generateReleaseBuildConfig', task ':generateReleaseAssets', task ':mergeReleaseAssets', task ':generateReleaseResValues', task ':generateReleaseResources', task ':mergeReleaseResources', task ':processReleaseManifest', task ':processReleaseResources', task ':generateReleaseSources', task ':compileReleaseJava', task ':lintVitalRelease', task ':compileReleaseNdk', task ':preDexRelease', task ':dexRelease', task ':processReleaseJavaRes', task ':packageRelease', task ':assembleRelease', task ':assemble', task ':compileLint', task ':lint', task ':preCompileDebugUnitTestJava', task ':compileDebugUnitTestJava', task ':compileDebugUnitTestSources', task ':mockableAndroidJar', task ':assembleDebugUnitTest', task ':testDebug', task ':preCompileReleaseUnitTestJava', task ':compileReleaseUnitTestJava', task ':compileReleaseUnitTestSources', task ':assembleReleaseUnitTest', task ':testRelease', task ':test', task ':check', task ':build']
+:preBuild (Thread[main,5,main]) started.
+:preBuild
+Skipping task ':preBuild' as it has no actions.
+:preBuild UP-TO-DATE
+:preBuild (Thread[main,5,main]) completed. Took 0.027 secs.
+:preDebugBuild (Thread[main,5,main]) started.
+:preDebugBuild
+Skipping task ':preDebugBuild' as it has no actions.
+:preDebugBuild UP-TO-DATE
+:preDebugBuild (Thread[main,5,main]) completed. Took 0.002 secs.
+:compileDebugNdk (Thread[main,5,main]) started.
+:compileDebugNdk
+Skipping task ':compileDebugNdk' as it has no source files.
+:compileDebugNdk UP-TO-DATE
+:compileDebugNdk (Thread[main,5,main]) completed. Took 0.002 secs.
+:checkDebugManifest (Thread[main,5,main]) started.
+:checkDebugManifest
+Executing task ':checkDebugManifest' (up-to-date check took 0.001 secs) due to:
+  Task has not declared any outputs.
+:checkDebugManifest (Thread[main,5,main]) completed. Took 0.01 secs.
+:preReleaseBuild (Thread[main,5,main]) started.
+:preReleaseBuild
+Skipping task ':preReleaseBuild' as it has no actions.
+:preReleaseBuild UP-TO-DATE
+:preReleaseBuild (Thread[main,5,main]) completed. Took 0.001 secs.
+:prepareComEmbarkmobileZxingAndroidIntegration200Library (Thread[main,5,main]) started.
+:prepareComEmbarkmobileZxingAndroidIntegration200Library
+Skipping task ':prepareComEmbarkmobileZxingAndroidIntegration200Library' as it is up-to-date (took 0.03 secs).
+:prepareComEmbarkmobileZxingAndroidIntegration200Library UP-TO-DATE
+:prepareComEmbarkmobileZxingAndroidIntegration200Library (Thread[main,5,main]) completed. Took 0.033 secs.
+:prepareComEmbarkmobileZxingAndroidMinimal200Library (Thread[main,5,main]) started.
+:prepareComEmbarkmobileZxingAndroidMinimal200Library
+Skipping task ':prepareComEmbarkmobileZxingAndroidMinimal200Library' as it is up-to-date (took 0.023 secs).
+:prepareComEmbarkmobileZxingAndroidMinimal200Library UP-TO-DATE
+:prepareComEmbarkmobileZxingAndroidMinimal200Library (Thread[main,5,main]) completed. Took 0.026 secs.
+:prepareNetSfScubaScuba_sc_android007IrmaLibrary (Thread[main,5,main]) started.
+:prepareNetSfScubaScuba_sc_android007IrmaLibrary
+Skipping task ':prepareNetSfScubaScuba_sc_android007IrmaLibrary' as it is up-to-date (took 0.004 secs).
+:prepareNetSfScubaScuba_sc_android007IrmaLibrary UP-TO-DATE
+:prepareNetSfScubaScuba_sc_android007IrmaLibrary (Thread[main,5,main]) completed. Took 0.005 secs.
+:prepareOrgIrmacardAndroidIrma_android_library091Library (Thread[main,5,main]) started.
+:prepareOrgIrmacardAndroidIrma_android_library091Library
+Skipping task ':prepareOrgIrmacardAndroidIrma_android_library091Library' as it is up-to-date (took 0.006 secs).
+:prepareOrgIrmacardAndroidIrma_android_library091Library UP-TO-DATE
+:prepareOrgIrmacardAndroidIrma_android_library091Library (Thread[main,5,main]) completed. Took 0.007 secs.
+:prepareDebugDependencies (Thread[main,5,main]) started.
+:prepareDebugDependencies
+Executing task ':prepareDebugDependencies' (up-to-date check took 0.001 secs) due to:
+  Task has not declared any outputs.
+:prepareDebugDependencies (Thread[main,5,main]) completed. Took 0.037 secs.
+:compileDebugAidl (Thread[main,5,main]) started.
+:compileDebugAidl
+Skipping task ':compileDebugAidl' as it is up-to-date (took 0.012 secs).
+:compileDebugAidl UP-TO-DATE
+:compileDebugAidl (Thread[main,5,main]) completed. Took 0.034 secs.
+:compileDebugRenderscript (Thread[main,5,main]) started.
+:compileDebugRenderscript
+Skipping task ':compileDebugRenderscript' as it is up-to-date (took 0.014 secs).
+:compileDebugRenderscript UP-TO-DATE
+:compileDebugRenderscript (Thread[main,5,main]) completed. Took 0.022 secs.
+:generateDebugBuildConfig (Thread[main,5,main]) started.
+:generateDebugBuildConfig
+Skipping task ':generateDebugBuildConfig' as it is up-to-date (took 0.007 secs).
+:generateDebugBuildConfig UP-TO-DATE
+:generateDebugBuildConfig (Thread[main,5,main]) completed. Took 0.016 secs.
+:generateDebugAssets (Thread[main,5,main]) started.
+:generateDebugAssets
+Skipping task ':generateDebugAssets' as it has no actions.
+:generateDebugAssets UP-TO-DATE
+:generateDebugAssets (Thread[main,5,main]) completed. Took 0.002 secs.
+:mergeDebugAssets (Thread[main,5,main]) started.
+:mergeDebugAssets
+Skipping task ':mergeDebugAssets' as it is up-to-date (took 0.01 secs).
+:mergeDebugAssets UP-TO-DATE
+:mergeDebugAssets (Thread[main,5,main]) completed. Took 0.013 secs.
+:generateDebugResValues (Thread[main,5,main]) started.
+:generateDebugResValues
+Skipping task ':generateDebugResValues' as it is up-to-date (took 0.004 secs).
+:generateDebugResValues UP-TO-DATE
+:generateDebugResValues (Thread[main,5,main]) completed. Took 0.007 secs.
+:generateDebugResources (Thread[main,5,main]) started.
+:generateDebugResources
+Skipping task ':generateDebugResources' as it has no actions.
+:generateDebugResources UP-TO-DATE
+:generateDebugResources (Thread[main,5,main]) completed. Took 0.002 secs.
+:mergeDebugResources (Thread[main,5,main]) started.
+:mergeDebugResources
+Skipping task ':mergeDebugResources' as it is up-to-date (took 0.035 secs).
+:mergeDebugResources UP-TO-DATE
+:mergeDebugResources (Thread[main,5,main]) completed. Took 0.04 secs.
+:processDebugManifest (Thread[main,5,main]) started.
+:processDebugManifest
+Skipping task ':processDebugManifest' as it is up-to-date (took 0.009 secs).
+:processDebugManifest UP-TO-DATE
+:processDebugManifest (Thread[main,5,main]) completed. Took 0.041 secs.
+:processDebugResources (Thread[main,5,main]) started.
+:processDebugResources
+Executing task ':processDebugResources' (up-to-date check took 0.029 secs) due to:
+  Output file /home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/build/intermediates/resources/resources-debug.ap_ has changed.
+All input files are considered out-of-date for incremental task ':processDebugResources'.
+deleteDir(/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/build/generated/source/r/debug) returned: true
+Starting process 'command '/home/laptop/Documents/Bachelor-Scriptie/android-sdk-linux/build-tools/19.1.0/aapt''. Working directory: /home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker Command: /home/laptop/Documents/Bachelor-Scriptie/android-sdk-linux/build-tools/19.1.0/aapt package -f --no-crunch -I /home/laptop/Documents/Bachelor-Scriptie/android-sdk-linux/platforms/android-19/android.jar -M /home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/build/intermediates/manifests/full/debug/AndroidManifest.xml -S /home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/build/intermediates/res/debug -A /home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/build/intermediates/assets/debug -m -J /home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/build/generated/source/r/debug -F /home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/build/intermediates/resources/resources-debug.ap_ --debug-mode --custom-package org.irmacard.androidcardproxy -0 apk --output-text-symbols /home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/build/intermediates/symbols/debug
+Successfully started process 'command '/home/laptop/Documents/Bachelor-Scriptie/android-sdk-linux/build-tools/19.1.0/aapt''
+:processDebugResources (Thread[main,5,main]) completed. Took 0.296 secs.
+:generateDebugSources (Thread[main,5,main]) started.
+:generateDebugSources
+Skipping task ':generateDebugSources' as it has no actions.
+:generateDebugSources (Thread[main,5,main]) completed. Took 0.001 secs.
+:compileDebugJava (Thread[main,5,main]) started.
+:compileDebugJava
+Executing task ':compileDebugJava' (up-to-date check took 0.016 secs) due to:
+  Value of input property 'options.compilerArgs' has changed for task ':compileDebugJava'
+All input files are considered out-of-date for incremental task ':compileDebugJava'.
+Compiling with JDK Java compiler API.
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant TypeKind.PACKAGE
+  reason: class file for javax.lang.model.type.TypeKind not found
+warning: unknown enum constant TypeKind.INT
+warning: unknown enum constant TypeKind.BOOLEAN
+warning: unknown enum constant TypeKind.CHAR
+warning: unknown enum constant TypeKind.DOUBLE
+warning: unknown enum constant TypeKind.FLOAT
+warning: unknown enum constant TypeKind.LONG
+warning: unknown enum constant TypeKind.SHORT
+warning: unknown enum constant TypeKind.BYTE
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+error: InvocationTargetException when invoking constructor for class org.checkerframework.checker.nullness.KeyForVisitor; Underlying cause: InvocationTargetException when invoking constructor for class org.checkerframework.checker.nullness.KeyForAnnotatedTypeFactory; Underlying cause: com.sun.tools.javac.code.Symbol$CompletionFailure: class file for java.lang.Class$AnnotationData not found; invoke the compiler with -AprintErrorStack to see the stack trace.
+warning: -source 1.6 does not support type annotations
+warning: -source 1.6 does not support type annotations
+:compileDebugJava FAILED
+:compileDebugJava (Thread[main,5,main]) completed. Took 1.58 secs.
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileDebugJava'.
+> java.lang.NullPointerException
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 14.418 secs
+Stopped 0 compiler daemon(s).
+
+===============================================================
+
+
+$gradle build -info
+
+Starting Build
+Settings evaluated using settings file '/master/settings.gradle'.
+Projects loaded. Root project using build file '/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/build.gradle'.
+Included projects: [root project 'irmaproxychecker']
+Evaluating root project 'irmaproxychecker' using build file '/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/build.gradle'.
+Gradle version 2.2 is required. Current version is 2.10. If using the gradle wrapper, try editing the distributionUrl in /home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/gradle/wrapper/gradle-wrapper.properties to gradle-2.2-all.zip
+As com.android.build.gradle.overrideVersionCheck is set, continuing anyways.
+Creating configuration compile.
+Creating configuration apk.
+Creating configuration provided.
+Creating configuration wearApp.
+Creating configuration androidTestCompile.
+Creating configuration androidTestApk.
+Creating configuration androidTestProvided.
+Creating configuration androidTestWearApp.
+Creating configuration testCompile.
+Creating configuration testApk.
+Creating configuration testProvided.
+Creating configuration testWearApp.
+Creating configuration debugCompile.
+Creating configuration debugApk.
+Creating configuration debugProvided.
+Creating configuration debugWearApp.
+Creating configuration testDebugCompile.
+Creating configuration testDebugApk.
+Creating configuration testDebugProvided.
+Creating configuration testDebugWearApp.
+Creating configuration releaseCompile.
+Creating configuration releaseApk.
+Creating configuration releaseProvided.
+Creating configuration releaseWearApp.
+Creating configuration testReleaseCompile.
+Creating configuration testReleaseApk.
+Creating configuration testReleaseProvided.
+Creating configuration testReleaseWearApp.
+Resource missing. [HTTP GET: https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/com/android/support/support-v4/maven-metadata.xml]
+Failed to get resource: GET. [HTTP HTTP/1.1 400 Bad Request: https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/com/android/support/support-v4/]
+Resource missing. [HTTP GET: https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/com/android/support/support-v4/maven-metadata.xml]
+Failed to get resource: GET. [HTTP HTTP/1.1 400 Bad Request: https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/com/android/support/support-v4/]
+Resource missing. [HTTP GET: https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/com/android/support/support-v4/maven-metadata.xml]
+Failed to get resource: GET. [HTTP HTTP/1.1 400 Bad Request: https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/com/android/support/support-v4/]
+Resource missing. [HTTP GET: https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/com/android/support/support-v4/maven-metadata.xml]
+Failed to get resource: GET. [HTTP HTTP/1.1 400 Bad Request: https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/com/android/support/support-v4/]
+All projects evaluated.
+Selected primary task 'build' from project :
+Tasks to be executed: [task ':preBuild', task ':preDebugBuild', task ':compileDebugNdk', task ':checkDebugManifest', task ':preReleaseBuild', task ':prepareComEmbarkmobileZxingAndroidIntegration200Library', task ':prepareComEmbarkmobileZxingAndroidMinimal200Library', task ':prepareNetSfScubaScuba_sc_android007IrmaLibrary', task ':prepareOrgIrmacardAndroidIrma_android_library091Library', task ':prepareDebugDependencies', task ':compileDebugAidl', task ':compileDebugRenderscript', task ':generateDebugBuildConfig', task ':generateDebugAssets', task ':mergeDebugAssets', task ':generateDebugResValues', task ':generateDebugResources', task ':mergeDebugResources', task ':processDebugManifest', task ':processDebugResources', task ':generateDebugSources', task ':compileDebugJava', task ':preDexDebug', task ':dexDebug', task ':processDebugJavaRes', task ':validateDebugSigning', task ':packageDebug', task ':zipalignDebug', task ':assembleDebug', task ':checkReleaseManifest', task ':prepareReleaseDependencies', task ':compileReleaseAidl', task ':compileReleaseRenderscript', task ':generateReleaseBuildConfig', task ':generateReleaseAssets', task ':mergeReleaseAssets', task ':generateReleaseResValues', task ':generateReleaseResources', task ':mergeReleaseResources', task ':processReleaseManifest', task ':processReleaseResources', task ':generateReleaseSources', task ':compileReleaseJava', task ':lintVitalRelease', task ':compileReleaseNdk', task ':preDexRelease', task ':dexRelease', task ':processReleaseJavaRes', task ':packageRelease', task ':assembleRelease', task ':assemble', task ':compileLint', task ':lint', task ':preCompileDebugUnitTestJava', task ':compileDebugUnitTestJava', task ':compileDebugUnitTestSources', task ':mockableAndroidJar', task ':assembleDebugUnitTest', task ':testDebug', task ':preCompileReleaseUnitTestJava', task ':compileReleaseUnitTestJava', task ':compileReleaseUnitTestSources', task ':assembleReleaseUnitTest', task ':testRelease', task ':test', task ':check', task ':build']
+:preBuild (Thread[main,5,main]) started.
+:preBuild
+Skipping task ':preBuild' as it has no actions.
+:preBuild UP-TO-DATE
+:preBuild (Thread[main,5,main]) completed. Took 0.008 secs.
+:preDebugBuild (Thread[main,5,main]) started.
+:preDebugBuild
+Skipping task ':preDebugBuild' as it has no actions.
+:preDebugBuild UP-TO-DATE
+:preDebugBuild (Thread[main,5,main]) completed. Took 0.001 secs.
+:compileDebugNdk (Thread[main,5,main]) started.
+:compileDebugNdk
+Skipping task ':compileDebugNdk' as it has no source files.
+:compileDebugNdk UP-TO-DATE
+:compileDebugNdk (Thread[main,5,main]) completed. Took 0.003 secs.
+:checkDebugManifest (Thread[main,5,main]) started.
+:checkDebugManifest
+Executing task ':checkDebugManifest' (up-to-date check took 0.001 secs) due to:
+  Task has not declared any outputs.
+:checkDebugManifest (Thread[main,5,main]) completed. Took 0.01 secs.
+:preReleaseBuild (Thread[main,5,main]) started.
+:preReleaseBuild
+Skipping task ':preReleaseBuild' as it has no actions.
+:preReleaseBuild UP-TO-DATE
+:preReleaseBuild (Thread[main,5,main]) completed. Took 0.001 secs.
+:prepareComEmbarkmobileZxingAndroidIntegration200Library (Thread[main,5,main]) started.
+:prepareComEmbarkmobileZxingAndroidIntegration200Library
+Skipping task ':prepareComEmbarkmobileZxingAndroidIntegration200Library' as it is up-to-date (took 0.038 secs).
+:prepareComEmbarkmobileZxingAndroidIntegration200Library UP-TO-DATE
+:prepareComEmbarkmobileZxingAndroidIntegration200Library (Thread[main,5,main]) completed. Took 0.041 secs.
+:prepareComEmbarkmobileZxingAndroidMinimal200Library (Thread[main,5,main]) started.
+:prepareComEmbarkmobileZxingAndroidMinimal200Library
+Skipping task ':prepareComEmbarkmobileZxingAndroidMinimal200Library' as it is up-to-date (took 0.037 secs).
+:prepareComEmbarkmobileZxingAndroidMinimal200Library UP-TO-DATE
+:prepareComEmbarkmobileZxingAndroidMinimal200Library (Thread[main,5,main]) completed. Took 0.039 secs.
+:prepareNetSfScubaScuba_sc_android007IrmaLibrary (Thread[main,5,main]) started.
+:prepareNetSfScubaScuba_sc_android007IrmaLibrary
+Skipping task ':prepareNetSfScubaScuba_sc_android007IrmaLibrary' as it is up-to-date (took 0.005 secs).
+:prepareNetSfScubaScuba_sc_android007IrmaLibrary UP-TO-DATE
+:prepareNetSfScubaScuba_sc_android007IrmaLibrary (Thread[main,5,main]) completed. Took 0.007 secs.
+:prepareOrgIrmacardAndroidIrma_android_library091Library (Thread[main,5,main]) started.
+:prepareOrgIrmacardAndroidIrma_android_library091Library
+Skipping task ':prepareOrgIrmacardAndroidIrma_android_library091Library' as it is up-to-date (took 0.009 secs).
+:prepareOrgIrmacardAndroidIrma_android_library091Library UP-TO-DATE
+:prepareOrgIrmacardAndroidIrma_android_library091Library (Thread[main,5,main]) completed. Took 0.011 secs.
+:prepareDebugDependencies (Thread[main,5,main]) started.
+:prepareDebugDependencies
+Executing task ':prepareDebugDependencies' (up-to-date check took 0.0 secs) due to:
+  Task has not declared any outputs.
+:prepareDebugDependencies (Thread[main,5,main]) completed. Took 0.035 secs.
+:compileDebugAidl (Thread[main,5,main]) started.
+:compileDebugAidl
+Skipping task ':compileDebugAidl' as it is up-to-date (took 0.01 secs).
+:compileDebugAidl UP-TO-DATE
+:compileDebugAidl (Thread[main,5,main]) completed. Took 0.028 secs.
+:compileDebugRenderscript (Thread[main,5,main]) started.
+:compileDebugRenderscript
+Skipping task ':compileDebugRenderscript' as it is up-to-date (took 0.014 secs).
+:compileDebugRenderscript UP-TO-DATE
+:compileDebugRenderscript (Thread[main,5,main]) completed. Took 0.02 secs.
+:generateDebugBuildConfig (Thread[main,5,main]) started.
+:generateDebugBuildConfig
+Skipping task ':generateDebugBuildConfig' as it is up-to-date (took 0.009 secs).
+:generateDebugBuildConfig UP-TO-DATE
+:generateDebugBuildConfig (Thread[main,5,main]) completed. Took 0.017 secs.
+:generateDebugAssets (Thread[main,5,main]) started.
+:generateDebugAssets
+Skipping task ':generateDebugAssets' as it has no actions.
+:generateDebugAssets UP-TO-DATE
+:generateDebugAssets (Thread[main,5,main]) completed. Took 0.001 secs.
+:mergeDebugAssets (Thread[main,5,main]) started.
+:mergeDebugAssets
+Skipping task ':mergeDebugAssets' as it is up-to-date (took 0.012 secs).
+:mergeDebugAssets UP-TO-DATE
+:mergeDebugAssets (Thread[main,5,main]) completed. Took 0.014 secs.
+:generateDebugResValues (Thread[main,5,main]) started.
+:generateDebugResValues
+Skipping task ':generateDebugResValues' as it is up-to-date (took 0.004 secs).
+:generateDebugResValues UP-TO-DATE
+:generateDebugResValues (Thread[main,5,main]) completed. Took 0.006 secs.
+:generateDebugResources (Thread[main,5,main]) started.
+:generateDebugResources
+Skipping task ':generateDebugResources' as it has no actions.
+:generateDebugResources UP-TO-DATE
+:generateDebugResources (Thread[main,5,main]) completed. Took 0.001 secs.
+:mergeDebugResources (Thread[main,5,main]) started.
+:mergeDebugResources
+Skipping task ':mergeDebugResources' as it is up-to-date (took 0.053 secs).
+:mergeDebugResources UP-TO-DATE
+:mergeDebugResources (Thread[main,5,main]) completed. Took 0.058 secs.
+:processDebugManifest (Thread[main,5,main]) started.
+:processDebugManifest
+Skipping task ':processDebugManifest' as it is up-to-date (took 0.01 secs).
+:processDebugManifest UP-TO-DATE
+:processDebugManifest (Thread[main,5,main]) completed. Took 0.033 secs.
+:processDebugResources (Thread[main,5,main]) started.
+:processDebugResources
+Skipping task ':processDebugResources' as it is up-to-date (took 0.029 secs).
+:processDebugResources UP-TO-DATE
+:processDebugResources (Thread[main,5,main]) completed. Took 0.033 secs.
+:generateDebugSources (Thread[main,5,main]) started.
+:generateDebugSources
+Skipping task ':generateDebugSources' as it has no actions.
+:generateDebugSources UP-TO-DATE
+:generateDebugSources (Thread[main,5,main]) completed. Took 0.001 secs.
+:compileDebugJava (Thread[main,5,main]) started.
+:compileDebugJava
+Executing task ':compileDebugJava' (up-to-date check took 0.017 secs) due to:
+  No history is available.
+All input files are considered out-of-date for incremental task ':compileDebugJava'.
+Compiling with JDK Java compiler API.
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant TypeKind.PACKAGE
+  reason: class file for javax.lang.model.type.TypeKind not found
+warning: unknown enum constant TypeKind.INT
+warning: unknown enum constant TypeKind.BOOLEAN
+warning: unknown enum constant TypeKind.CHAR
+warning: unknown enum constant TypeKind.DOUBLE
+warning: unknown enum constant TypeKind.FLOAT
+warning: unknown enum constant TypeKind.LONG
+warning: unknown enum constant TypeKind.SHORT
+warning: unknown enum constant TypeKind.BYTE
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+error: InvocationTargetException when invoking constructor for class org.checkerframework.checker.nullness.KeyForVisitor; Underlying cause: InvocationTargetException when invoking constructor for class org.checkerframework.checker.nullness.KeyForAnnotatedTypeFactory; Underlying cause: com.sun.tools.javac.code.Symbol$CompletionFailure: class file for java.lang.Class$AnnotationData not found; invoke the compiler with -AprintErrorStack to see the stack trace.
+warning: -source 1.6 does not support type annotations
+warning: -source 1.6 does not support type annotations
+:compileDebugJava FAILED
+:compileDebugJava (Thread[main,5,main]) completed. Took 1.503 secs.
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileDebugJava'.
+> java.lang.NullPointerException
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 12.553 secs
+Stopped 0 compiler daemon(s).

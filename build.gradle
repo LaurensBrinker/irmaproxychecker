@@ -87,7 +87,7 @@ dependencies {
         checkerFrameworkJavac "org.checkerframework:compiler:${checkerFrameworkVersion}"
     }
     checkerFramework "org.checkerframework:checker:${checkerFrameworkVersion}"
-    compile "org.checkerframework:checker-qual:${checkerFrameworkVersion}"  
+    compile "org.checkerframework:checker-qual:${checkerFrameworkVersion}"
 }
 
 allprojects {
