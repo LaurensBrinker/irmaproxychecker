@@ -13,7 +13,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.1.1'
+        classpath 'com.android.tools.build:gradle:1.5.0'
     }
 }
 
@@ -79,6 +79,7 @@ dependencies {
     compile "org.irmacard.android:irma_android_library:0.9.1"
     compile 'net.sf.scuba:scuba_sc_android:0.0.7-irma'
     compile 'net.sf.scuba:scuba_smartcards:0.0.7-irma'
+    
     ext.checkerFrameworkVersion = '1.9.13'
     ext.jdkVersion = JavaVersion.current().isJava7() ? 'jdk7' : 'jdk8'
     checkerFrameworkAnnotatedJDK "org.checkerframework:${jdkVersion}:${checkerFrameworkVersion}"
@@ -91,18 +92,21 @@ dependencies {
 }
 
 allprojects {
-    tasks.withType(JavaCompile).all { JavaCompile compile ->
-        compile.options.compilerArgs = [
-                '-processor', 'org.checkerframework.checker.nullness.NullnessChecker',
-                '-processorpath', "${configurations.checkerFramework.asPath}",
-                // uncomment to turn Checker Framework errors into warnings
-                // '-Awarns',
-                "-Xbootclasspath/p:${configurations.checkerFrameworkAnnotatedJDK.asPath}"
-        ]
-        if (targetJavaVersion.isJava7()) {
-            compile.options.compilerArgs += ['-source', '7', '-target', '7']
-            options.fork = true
-            options.forkOptions.jvmArgs += ["-Xbootclasspath/p:${configurations.checkerFrameworkJavac.asPath}"]
+    gradle.projectsEvaluated{
+        tasks.withType(JavaCompile).all { JavaCompile compile ->
+            compile.options.compilerArgs = [
+                    '-processor', 'org.checkerframework.checker.nullness.NullnessChecker',
+                    '-processorpath', "${configurations.checkerFramework.asPath}",
+                    // uncomment to turn Checker Framework errors into warnings
+                    // '-Awarns',
+                    "-Xbootclasspath/p:${configurations.checkerFrameworkAnnotatedJDK.asPath}"
+            ]
+            if (targetJavaVersion.isJava7()) {
+                compile.options.compilerArgs += ['-source', '7', '-target', '7']
+                options.bootClasspath = "${configurations.checkerFrameworkJavac.asPath}:"+System.getProperty("sun.boot.class.path") +":"+ options.bootClasspath
+                options.fork = true
+                options.forkOptions.jvmArgs += ["-Xbootclasspath/p:${configurations.checkerFrameworkJavac.asPath}"]
+            }
         }
     }
 }
