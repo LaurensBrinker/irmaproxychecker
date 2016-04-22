@@ -1,0 +1,1603 @@
+Links:
+http://types.cs.washington.edu/checker-framework/releases/1.0.6/checkers-manual.html
+http://types.cs.washington.edu/checker-framework/tutorial/webpages/security-error-eclipse.html
+http://types.cs.washington.edu/checker-framework/current/checker-framework-manual.html#tainting-checker
+
+======
+19-feb-2016
+
+#Install Java JDK
+
+#Install ant (1.8.2) or higher
+
+#Install android SDK
+
+#Set ANDROID_HOME variable to the directory where you installed the android SDK.
+
+#Install android-15 target
+
+#laptop@LAPTOP:~/Documents/Bachelor-Scriptie/sparta-toolset-v1.0.2$ ant jar
+Buildfile: build.xml does not exist!
+Build failed
+
+#Tried the source repository instead of binary. (duh)
+
+#It runs now, but I need to correctly set the ANDROID_HOME variable.
+
+Fixed by:
+nano ~/.bash_profile 
+
+then:
+export ANDROID_HOME=/home/laptop/Documents/Bachelor-Scriptie/android-sdk-linux
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/tools:$PATH
+
+test:
+source ~/.bash_profile
+echo $ANDROID_HOME
+
+#laptop@LAPTOP:~/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2$ ant jar
+
+Buildfile: /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build.xml
+
+merge-stubfiles:
+     [copy] Copying 1 file to /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/src/sparta/checkers/intents
+
+prep:
+    [mkdir] Created dir: /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build
+    [mkdir] Created dir: /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/build
+    [mkdir] Created dir: /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/build/testclasses
+     [java] Java Result: 1
+
+build.check.uptodate:
+
+build:
+     [copy] Copying 84 files to /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build
+     [java] Error: Unable to access jarfile /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/${env.CHECKERFRAMEWORK}/checker/dist/checker.jar
+
+BUILD FAILED
+/home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build.xml:191: Java returned: 1
+
+Total time: 0 seconds
+
+#Sudo ant jar:
+laptop@LAPTOP:~/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2$ sudo ant jar
+[sudo] password for laptop: 
+Buildfile: /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build.xml
+
+BUILD FAILED
+/home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build.xml:16: Neither android.home nor ANDROID_HOME is set!
+
+Total time: 0 seconds
+
+# Download Checker Framework: http://types.cs.washington.edu/checker-framework/current/checker-framework-1.9.11.zip
+
+#extract .zip to sparta folder
+
+#laptop@LAPTOP:~/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2$ nano ~/.bash_profile
+
+export CHECKERFRAMEWORK=${HOME}/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/checker-framework-1.9.11
+export PATH=${CHECKERFRAMEWORK}/checker/bin:${PATH}
+
+source ~/.bash_profile
+
+#laptop@LAPTOP:~/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2$ ant jarBuildfile: /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build.xml
+
+merge-stubfiles:
+     [copy] Copying 1 file to /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/src/sparta/checkers/intents
+
+prep:
+
+build.check.uptodate:
+
+build:
+     [copy] Copying 2 files to /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build
+     [java] javac 1.8.0-jsr308-1.9.11
+    [touch] Creating /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build/.timestamp
+   [delete] Deleting: /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build/.timestamp
+
+validate-stubfiles:
+     [java] warning: StubParser: Skipping annotation type: android.annotation.TargetApi
+     [java] warning: StubParser: Method setLatestEventInfo(Context,CharSequence,CharSequence,PendingIntent) not found in type android.app.Notification
+     [java] warning: StubParser: Field REQUESTED_PERMISSION_REQUIRED not found in type android.content.pm.PackageInfo
+     [java] warning: StubParser: Skipping enum type: android.net.NetworkInfo.State
+     [java] warning: StubParser: Method clearHistory(ContentResolver) not found in type android.provider.Browser
+     [java] warning: StubParser: Method clearSearches(ContentResolver) not found in type android.provider.Browser
+     [java] warning: StubParser: Method getLoaderManager(String,boolean,boolean) not found in type android.support.v4.app.FragmentActivity
+     [java] warning: StubParser: Method idealByteArraySize(int) not found in type android.support.v4.util.LongSparseArray
+     [java] warning: StubParser: Method idealLongArraySize(int) not found in type android.support.v4.util.LongSparseArray
+     [java] warning: StubParser: Method getLayoutDirectionFromFirstChar(Locale) not found in type android.support.v4.text.TextUtilsCompat
+     [java] warning: StubParser: Method addLikelySubtags(String) not found in type android.support.v4.text.ICUCompat
+     [java] warning: StubParser: Method getScript(String) not found in type android.support.v4.text.ICUCompat
+     [java] warning: StubParser: Type not found: android.support.v4.print.PrintHelperKitKat
+     [java] warning: StubParser: Method ceil(float) not found in type android.util.FloatMath
+     [java] warning: StubParser: Method cos(float) not found in type android.util.FloatMath
+     [java] warning: StubParser: Method exp(float) not found in type android.util.FloatMath
+     [java] warning: StubParser: Method floor(float) not found in type android.util.FloatMath
+     [java] warning: StubParser: Method hypot(float,float) not found in type android.util.FloatMath
+     [java] warning: StubParser: Method pow(float,float) not found in type android.util.FloatMath
+     [java] warning: StubParser: Method sin(float) not found in type android.util.FloatMath
+     [java] warning: StubParser: Method sqrt(float) not found in type android.util.FloatMath
+     [java] warning: StubParser: Constructor <init>(ArrayList) not found in type android.view.ViewGroup
+     [java] warning: StubParser: Method onItemClick(AdapterView,View,int,long) not found in type android.widget.AdapterView.OnItemSelectedListener
+     [java] warning: StubParser: Type not found: com.google.android.maps.GeoPoint
+     [java] warning: StubParser: Method get() not found in type java.lang.ref.ReferenceQueue
+     [java] warning: StubParser: Skipping enum type: java.util.concurrent.TimeUnit
+     [java] warning: StubParser: Type not found: org.apache.http.ConnectionReuseStrategy
+     [java] warning: StubParser: Type not found: org.apache.http.Header
+     [java] warning: StubParser: Type not found: org.apache.http.HeaderElement
+     [java] warning: StubParser: Type not found: org.apache.http.HeaderElementIterator
+     [java] warning: StubParser: Type not found: org.apache.http.HeaderIterator
+     [java] warning: StubParser: Type not found: org.apache.http.HttpEntity
+     [java] warning: StubParser: Type not found: org.apache.http.HttpEntityEnclosingRequest
+     [java] warning: StubParser: Type not found: org.apache.http.HttpHost
+     [java] warning: StubParser: Type not found: org.apache.http.HttpMessage
+     [java] warning: StubParser: Type not found: org.apache.http.HttpRequestInterceptor
+     [java] warning: StubParser: Type not found: org.apache.http.HttpResponse
+     [java] warning: StubParser: Type not found: org.apache.http.HttpResponseInterceptor
+     [java] warning: StubParser: Type not found: org.apache.http.ProtocolVersion
+     [java] warning: StubParser: Type not found: org.apache.http.StatusLine
+     [java] warning: StubParser: Type not found: org.apache.http.TokenIterator
+     [java] warning: StubParser: Type not found: org.apache.http.auth.AuthenticationException
+     [java] warning: StubParser: Type not found: org.apache.http.auth.UsernamePasswordCredentials
+     [java] warning: StubParser: Type not found: org.apache.http.conn.ClientConnectionManager
+     [java] warning: StubParser: Type not found: org.apache.http.conn.ConnectionKeepAliveStrategy
+     [java] warning: StubParser: Type not found: org.apache.http.message.BasicHeaderElementIterator
+     [java] warning: StubParser: Type not found: org.apache.http.protocol.HTTP
+     [java] warning: StubParser: Type not found: org.apache.http.util.EntityUtils
+     [java] warning: StubParser: Type not found: org.apache.http.conn.params.ConnPerRoute
+     [java] warning: StubParser: Type not found: org.apache.http.conn.params.ConnManagerParams
+     [java] warning: StubParser: Type not found: org.apache.http.conn.scheme.SchemeRegistry
+     [java] warning: StubParser: Type not found: org.apache.http.conn.scheme.Scheme
+     [java] warning: StubParser: Type not found: org.apache.http.conn.scheme.PlainSocketFactory
+     [java] warning: StubParser: Type not found: org.apache.http.entity.InputStreamEntity
+     [java] warning: StubParser: Type not found: org.apache.http.entity.HttpEntityWrapper
+     [java] warning: StubParser: Type not found: org.apache.http.entity.StringEntity
+     [java] warning: StubParser: Type not found: org.apache.http.entity.AbstractHttpEntity
+     [java] warning: StubParser: Type not found: org.apache.http.client.entity.UrlEncodedFormEntity
+     [java] warning: StubParser: Type not found: org.apache.http.client.methods.HttpGet
+     [java] warning: StubParser: Type not found: org.apache.http.client.methods.HttpHead
+     [java] warning: StubParser: Type not found: org.apache.http.client.methods.HttpPost
+     [java] warning: StubParser: Type not found: org.apache.http.client.methods.HttpPut
+     [java] warning: StubParser: Type not found: org.apache.http.client.methods.HttpUriRequest
+     [java] warning: StubParser: Type not found: org.apache.http.client.methods.HttpEntityEnclosingRequestBase
+     [java] warning: StubParser: Type not found: org.apache.http.client.HttpResponseException
+     [java] warning: StubParser: Type not found: org.apache.http.client.HttpClient
+     [java] warning: StubParser: Type not found: org.apache.http.client.CredentialsProvider
+     [java] warning: StubParser: Type not found: org.apache.http.client.CookieStore
+     [java] warning: StubParser: Type not found: org.apache.http.cookie.Cookie
+     [java] warning: StubParser: Type not found: org.apache.http.impl.DefaultConnectionReuseStrategy
+     [java] warning: StubParser: Type not found: org.apache.http.impl.auth.BasicScheme
+     [java] warning: StubParser: Type not found: org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager
+     [java] warning: StubParser: Type not found: org.apache.http.impl.client.AbstractHttpClient
+     [java] warning: StubParser: Type not found: org.apache.http.impl.client.BasicResponseHandler
+     [java] warning: StubParser: Type not found: org.apache.http.impl.client.DefaultHttpClient
+     [java] warning: StubParser: Type not found: org.apache.http.message.AbstractHttpMessage
+     [java] warning: StubParser: Type not found: org.apache.http.message.BasicNameValuePair
+     [java] warning: StubParser: Type not found: org.apache.http.message.BasicStatusLine
+     [java] warning: StubParser: Type not found: org.apache.http.message.BasicHttpResponse
+     [java] warning: StubParser: Type not found: org.apache.http.params.BasicHttpParams
+     [java] warning: StubParser: Type not found: org.apache.http.params.HttpProtocolParams
+     [java] warning: StubParser: Type not found: org.apache.http.client.methods.HttpRequestBase
+     [java] warning: StubParser: Type not found: org.htmlcleaner.HtmlCleaner
+     [java] warning: StubParser: Type not found: org.htmlcleaner.TagNode
+     [java] 84 warnings
+   [delete] Deleting: /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build/Test.class
+
+jar:
+      [jar] Building jar: /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/sparta.jar
+
+BUILD SUCCESSFUL
+Total time: 14 seconds
+
+#laptop@LAPTOP:~/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2$ ant all-testsBuildfile: /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build.xml
+
+merge-stubfiles:
+     [copy] Copying 1 file to /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/src/sparta/checkers/intents
+
+prep:
+
+build.check.uptodate:
+
+build:
+     [copy] Copying 2 files to /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build
+     [java] javac 1.8.0-jsr308-1.9.11
+    [touch] Creating /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build/.timestamp
+   [delete] Deleting: /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build/.timestamp
+
+validate-stubfiles:
+     [java] warning: StubParser: Skipping annotation type: android.annotation.TargetApi
+     [java] warning: StubParser: Method setLatestEventInfo(Context,CharSequence,CharSequence,PendingIntent) not found in type android.app.Notification
+     [java] warning: StubParser: Field REQUESTED_PERMISSION_REQUIRED not found in type android.content.pm.PackageInfo
+     [java] warning: StubParser: Skipping enum type: android.net.NetworkInfo.State
+     [java] warning: StubParser: Method clearHistory(ContentResolver) not found in type android.provider.Browser
+     [java] warning: StubParser: Method clearSearches(ContentResolver) not found in type android.provider.Browser
+     [java] warning: StubParser: Method getLoaderManager(String,boolean,boolean) not found in type android.support.v4.app.FragmentActivity
+     [java] warning: StubParser: Method idealByteArraySize(int) not found in type android.support.v4.util.LongSparseArray
+     [java] warning: StubParser: Method idealLongArraySize(int) not found in type android.support.v4.util.LongSparseArray
+     [java] warning: StubParser: Method getLayoutDirectionFromFirstChar(Locale) not found in type android.support.v4.text.TextUtilsCompat
+     [java] warning: StubParser: Method addLikelySubtags(String) not found in type android.support.v4.text.ICUCompat
+     [java] warning: StubParser: Method getScript(String) not found in type android.support.v4.text.ICUCompat
+     [java] warning: StubParser: Type not found: android.support.v4.print.PrintHelperKitKat
+     [java] warning: StubParser: Method ceil(float) not found in type android.util.FloatMath
+     [java] warning: StubParser: Method cos(float) not found in type android.util.FloatMath
+     [java] warning: StubParser: Method exp(float) not found in type android.util.FloatMath
+     [java] warning: StubParser: Method floor(float) not found in type android.util.FloatMath
+     [java] warning: StubParser: Method hypot(float,float) not found in type android.util.FloatMath
+     [java] warning: StubParser: Method pow(float,float) not found in type android.util.FloatMath
+     [java] warning: StubParser: Method sin(float) not found in type android.util.FloatMath
+     [java] warning: StubParser: Method sqrt(float) not found in type android.util.FloatMath
+     [java] warning: StubParser: Constructor <init>(ArrayList) not found in type android.view.ViewGroup
+     [java] warning: StubParser: Method onItemClick(AdapterView,View,int,long) not found in type android.widget.AdapterView.OnItemSelectedListener
+     [java] warning: StubParser: Type not found: com.google.android.maps.GeoPoint
+     [java] warning: StubParser: Method get() not found in type java.lang.ref.ReferenceQueue
+     [java] warning: StubParser: Skipping enum type: java.util.concurrent.TimeUnit
+     [java] warning: StubParser: Type not found: org.apache.http.ConnectionReuseStrategy
+     [java] warning: StubParser: Type not found: org.apache.http.Header
+     [java] warning: StubParser: Type not found: org.apache.http.HeaderElement
+     [java] warning: StubParser: Type not found: org.apache.http.HeaderElementIterator
+     [java] warning: StubParser: Type not found: org.apache.http.HeaderIterator
+     [java] warning: StubParser: Type not found: org.apache.http.HttpEntity
+     [java] warning: StubParser: Type not found: org.apache.http.HttpEntityEnclosingRequest
+     [java] warning: StubParser: Type not found: org.apache.http.HttpHost
+     [java] warning: StubParser: Type not found: org.apache.http.HttpMessage
+     [java] warning: StubParser: Type not found: org.apache.http.HttpRequestInterceptor
+     [java] warning: StubParser: Type not found: org.apache.http.HttpResponse
+     [java] warning: StubParser: Type not found: org.apache.http.HttpResponseInterceptor
+     [java] warning: StubParser: Type not found: org.apache.http.ProtocolVersion
+     [java] warning: StubParser: Type not found: org.apache.http.StatusLine
+     [java] warning: StubParser: Type not found: org.apache.http.TokenIterator
+     [java] warning: StubParser: Type not found: org.apache.http.auth.AuthenticationException
+     [java] warning: StubParser: Type not found: org.apache.http.auth.UsernamePasswordCredentials
+     [java] warning: StubParser: Type not found: org.apache.http.conn.ClientConnectionManager
+     [java] warning: StubParser: Type not found: org.apache.http.conn.ConnectionKeepAliveStrategy
+     [java] warning: StubParser: Type not found: org.apache.http.message.BasicHeaderElementIterator
+     [java] warning: StubParser: Type not found: org.apache.http.protocol.HTTP
+     [java] warning: StubParser: Type not found: org.apache.http.util.EntityUtils
+     [java] warning: StubParser: Type not found: org.apache.http.conn.params.ConnPerRoute
+     [java] warning: StubParser: Type not found: org.apache.http.conn.params.ConnManagerParams
+     [java] warning: StubParser: Type not found: org.apache.http.conn.scheme.SchemeRegistry
+     [java] warning: StubParser: Type not found: org.apache.http.conn.scheme.Scheme
+     [java] warning: StubParser: Type not found: org.apache.http.conn.scheme.PlainSocketFactory
+     [java] warning: StubParser: Type not found: org.apache.http.entity.InputStreamEntity
+     [java] warning: StubParser: Type not found: org.apache.http.entity.HttpEntityWrapper
+     [java] warning: StubParser: Type not found: org.apache.http.entity.StringEntity
+     [java] warning: StubParser: Type not found: org.apache.http.entity.AbstractHttpEntity
+     [java] warning: StubParser: Type not found: org.apache.http.client.entity.UrlEncodedFormEntity
+     [java] warning: StubParser: Type not found: org.apache.http.client.methods.HttpGet
+     [java] warning: StubParser: Type not found: org.apache.http.client.methods.HttpHead
+     [java] warning: StubParser: Type not found: org.apache.http.client.methods.HttpPost
+     [java] warning: StubParser: Type not found: org.apache.http.client.methods.HttpPut
+     [java] warning: StubParser: Type not found: org.apache.http.client.methods.HttpUriRequest
+     [java] warning: StubParser: Type not found: org.apache.http.client.methods.HttpEntityEnclosingRequestBase
+     [java] warning: StubParser: Type not found: org.apache.http.client.HttpResponseException
+     [java] warning: StubParser: Type not found: org.apache.http.client.HttpClient
+     [java] warning: StubParser: Type not found: org.apache.http.client.CredentialsProvider
+     [java] warning: StubParser: Type not found: org.apache.http.client.CookieStore
+     [java] warning: StubParser: Type not found: org.apache.http.cookie.Cookie
+     [java] warning: StubParser: Type not found: org.apache.http.impl.DefaultConnectionReuseStrategy
+     [java] warning: StubParser: Type not found: org.apache.http.impl.auth.BasicScheme
+     [java] warning: StubParser: Type not found: org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager
+     [java] warning: StubParser: Type not found: org.apache.http.impl.client.AbstractHttpClient
+     [java] warning: StubParser: Type not found: org.apache.http.impl.client.BasicResponseHandler
+     [java] warning: StubParser: Type not found: org.apache.http.impl.client.DefaultHttpClient
+     [java] warning: StubParser: Type not found: org.apache.http.message.AbstractHttpMessage
+     [java] warning: StubParser: Type not found: org.apache.http.message.BasicNameValuePair
+     [java] warning: StubParser: Type not found: org.apache.http.message.BasicStatusLine
+     [java] warning: StubParser: Type not found: org.apache.http.message.BasicHttpResponse
+     [java] warning: StubParser: Type not found: org.apache.http.params.BasicHttpParams
+     [java] warning: StubParser: Type not found: org.apache.http.params.HttpProtocolParams
+     [java] warning: StubParser: Type not found: org.apache.http.client.methods.HttpRequestBase
+     [java] warning: StubParser: Type not found: org.htmlcleaner.HtmlCleaner
+     [java] warning: StubParser: Type not found: org.htmlcleaner.TagNode
+     [java] 84 warnings
+   [delete] Deleting: /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build/Test.class
+
+jar:
+      [jar] Building jar: /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/sparta.jar
+
+build-tests:
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:17: error: package org.junit.runner does not exist
+     [java] import org.junit.runner.Result;
+     [java]                        ^
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:18: error: package org.junit.runner.notification does not exist
+     [java] import org.junit.runner.notification.Failure;
+     [java]                                     ^
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:19: error: package org.junit.runners.Parameterized does not exist
+     [java] import org.junit.runners.Parameterized.Parameters;
+     [java]                                       ^
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:57: error: cannot find symbol
+     [java]         @Parameters
+     [java]          ^
+     [java]   symbol:   class Parameters
+     [java]   location: class AndroidFenumCheckerTests
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:68: error: cannot find symbol
+     [java]         @Parameters
+     [java]          ^
+     [java]   symbol:   class Parameters
+     [java]   location: class AndroidPermissionsCheckerTests
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:80: error: cannot find symbol
+     [java]         @Parameters
+     [java]          ^
+     [java]   symbol:   class Parameters
+     [java]   location: class AndroidReportCheckerTests
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:98: error: cannot find symbol
+     [java]         @Parameters
+     [java]          ^
+     [java]   symbol:   class Parameters
+     [java]   location: class IntentCheckerTests
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:153: error: cannot find symbol
+     [java]         @Parameters
+     [java]          ^
+     [java]   symbol:   class Parameters
+     [java]   location: class ParameterizedFlowCheckerTests
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:180: error: cannot find symbol
+     [java]         @Parameters
+     [java]          ^
+     [java]   symbol:   class Parameters
+     [java]   location: class FlowCheckerTests
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:163: error: cannot find symbol
+     [java]         @Parameters
+     [java]          ^
+     [java]   symbol:   class Parameters
+     [java]   location: class ReflectionFlowCheckerTests
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:227: error: cannot find symbol
+     [java]         @Parameters
+     [java]          ^
+     [java]   symbol:   class Parameters
+     [java]   location: class FlowStrictTests
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:238: error: cannot find symbol
+     [java]         @Parameters
+     [java]          ^
+     [java]   symbol:   class Parameters
+     [java]   location: class StubfileTests
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:288: error: cannot find symbol
+     [java]         @Parameters
+     [java]          ^
+     [java]   symbol:   class Parameters
+     [java]   location: class FlowPolicyTests
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:311: error: cannot find symbol
+     [java]         @Parameters
+     [java]          ^
+     [java]   symbol:   class Parameters
+     [java]   location: class NotReviewedLibraryCheckerTests
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:35: error: package org.junit.runner does not exist
+     [java]         org.junit.runner.JUnitCore jc = new org.junit.runner.JUnitCore();
+     [java]                         ^
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:35: error: package org.junit.runner does not exist
+     [java]         org.junit.runner.JUnitCore jc = new org.junit.runner.JUnitCore();
+     [java]                                                             ^
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:36: error: cannot find symbol
+     [java]         Result run = jc.run(AndroidFenumCheckerTests.class);
+     [java]         ^
+     [java]   symbol:   class Result
+     [java]   location: class AndroidTests
+     [java] /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/tests/src/tests/AndroidTests.java:44: error: cannot find symbol
+     [java]             for (Failure f : run.getFailures()) {
+     [java]                  ^
+     [java]   symbol:   class Failure
+     [java]   location: class AndroidTests
+     [java] 18 errors
+
+BUILD FAILED
+/home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/build.xml:305: Java returned: 1
+
+Total time: 16 seconds
+
+#Start using eclipse now, dont know how to fix this.
+#Install the Eclipse Plugin: http://types.cs.washington.edu/checker-framework/eclipse/
+#http://types.cs.washington.edu/checker-framework/tutorial/
+#Tutorials geimporteerd, werkt
+#Eerste tutorial geprobeerd (null-pointer). Geen error maar een warning.
+#Bij de personal-blog tutorial kreeg ik een error dat javac niet gevonden werd. Dit kwam omdat ik de source file van de tutorial uit de Eclipse workspace liet komen, maar ik moet deze uit checker-framework/tutorials/src/... blabla runnen.
+
+#nano ~/.bash_profile
+#Toegevoegd: alias javacheck='java -jar $CHECKERFRAMEWORK/checker/dist/checker.jar' voor javacheck command.
+
+#In eclipse het de cardproxyapp toegevoegd.
+#Probleem dat hij /gen folder wil vinden
+#In Project properties de vraag hierna verwijderd.
+#Nieuwe error.
+
+
+#laptop@LAPTOP:~/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/checker-framework-1.9.11/irma_android_cardproxy-master/src/org/irmacard/androidcardproxy$ javacheck -processor org.checkerframework.checker.nullness.NullnessChecker MainActivity.java
+MainActivity.java:8: error: package net.sf.scuba.smartcards does not exist
+import net.sf.scuba.smartcards.CardServiceException;
+                              ^
+MainActivity.java:9: error: package net.sf.scuba.smartcards does not exist
+import net.sf.scuba.smartcards.IsoDepCardService;
+                              ^
+MainActivity.java:10: error: package net.sf.scuba.smartcards does not exist
+import net.sf.scuba.smartcards.ProtocolCommand;
+                              ^
+MainActivity.java:11: error: package net.sf.scuba.smartcards does not exist
+import net.sf.scuba.smartcards.ProtocolResponse;
+                              ^
+MainActivity.java:12: error: package net.sf.scuba.smartcards does not exist
+import net.sf.scuba.smartcards.ProtocolResponses;
+                              ^
+MainActivity.java:13: error: package net.sf.scuba.smartcards does not exist
+import net.sf.scuba.smartcards.ResponseAPDU;
+                              ^
+MainActivity.java:14: error: package org.apache.http.entity does not exist
+import org.apache.http.entity.StringEntity;
+                             ^
+MainActivity.java:15: error: package org.irmacard.android.util.pindialog does not exist
+import org.irmacard.android.util.pindialog.EnterPINDialogFragment;
+                                          ^
+MainActivity.java:16: error: package org.irmacard.android.util.pindialog.EnterPINDialogFragment does not exist
+import org.irmacard.android.util.pindialog.EnterPINDialogFragment.PINDialogListener;
+                                                                 ^
+MainActivity.java:17: error: package org.irmacard.androidcardproxy.messages does not exist
+import org.irmacard.androidcardproxy.messages.EventArguments;
+                                             ^
+MainActivity.java:18: error: package org.irmacard.androidcardproxy.messages does not exist
+import org.irmacard.androidcardproxy.messages.PinResultArguments;
+                                             ^
+MainActivity.java:19: error: package org.irmacard.androidcardproxy.messages does not exist
+import org.irmacard.androidcardproxy.messages.ReaderMessage;
+                                             ^
+MainActivity.java:20: error: package org.irmacard.androidcardproxy.messages does not exist
+import org.irmacard.androidcardproxy.messages.ReaderMessageDeserializer;
+                                             ^
+MainActivity.java:21: error: package org.irmacard.androidcardproxy.messages does not exist
+import org.irmacard.androidcardproxy.messages.ResponseArguments;
+                                             ^
+MainActivity.java:22: error: package org.irmacard.androidcardproxy.messages does not exist
+import org.irmacard.androidcardproxy.messages.TransmitCommandSetArguments;
+                                             ^
+MainActivity.java:23: error: package org.irmacard.idemix does not exist
+import org.irmacard.idemix.IdemixService;
+                          ^
+MainActivity.java:25: error: package android.app does not exist
+import android.app.Activity;
+                  ^
+MainActivity.java:26: error: package android.app does not exist
+import android.app.AlertDialog;
+                  ^
+MainActivity.java:27: error: package android.app does not exist
+import android.app.Dialog;
+                  ^
+MainActivity.java:28: error: package android.app does not exist
+import android.app.DialogFragment;
+                  ^
+MainActivity.java:29: error: package android.app does not exist
+import android.app.PendingIntent;
+                  ^
+MainActivity.java:30: error: package android.content does not exist
+import android.content.DialogInterface;
+                      ^
+MainActivity.java:31: error: package android.content does not exist
+import android.content.Intent;
+                      ^
+MainActivity.java:32: error: package android.content does not exist
+import android.content.IntentFilter;
+                      ^
+MainActivity.java:33: error: package android.net does not exist
+import android.net.Uri;
+                  ^
+MainActivity.java:34: error: package android.nfc does not exist
+import android.nfc.NfcAdapter;
+                  ^
+MainActivity.java:35: error: package android.nfc does not exist
+import android.nfc.Tag;
+                  ^
+MainActivity.java:36: error: package android.nfc.tech does not exist
+import android.nfc.tech.IsoDep;
+                       ^
+MainActivity.java:37: error: package android.os does not exist
+import android.os.AsyncTask;
+                 ^
+MainActivity.java:38: error: package android.os does not exist
+import android.os.Bundle;
+                 ^
+MainActivity.java:39: error: package android.os does not exist
+import android.os.CountDownTimer;
+                 ^
+MainActivity.java:40: error: package android.os does not exist
+import android.os.Handler;
+                 ^
+MainActivity.java:41: error: package android.os does not exist
+import android.os.Message;
+                 ^
+MainActivity.java:42: error: package android.util does not exist
+import android.util.Log;
+                   ^
+MainActivity.java:43: error: package android.view does not exist
+import android.view.Menu;
+                   ^
+MainActivity.java:44: error: package android.view does not exist
+import android.view.View;
+                   ^
+MainActivity.java:45: error: package android.widget does not exist
+import android.widget.ImageView;
+                     ^
+MainActivity.java:46: error: package android.widget does not exist
+import android.widget.TextView;
+                     ^
+MainActivity.java:47: error: package android.widget does not exist
+import android.widget.Toast;
+                     ^
+MainActivity.java:49: error: package com.google.gson does not exist
+import com.google.gson.Gson;
+                      ^
+MainActivity.java:50: error: package com.google.gson does not exist
+import com.google.gson.GsonBuilder;
+                      ^
+MainActivity.java:51: error: package com.google.gson does not exist
+import com.google.gson.JsonParser;
+                      ^
+MainActivity.java:52: error: package com.google.gson.stream does not exist
+import com.google.gson.stream.JsonReader;
+                             ^
+MainActivity.java:53: error: package com.google.zxing.integration.android does not exist
+import com.google.zxing.integration.android.IntentIntegrator;
+                                           ^
+MainActivity.java:54: error: package com.google.zxing.integration.android does not exist
+import com.google.zxing.integration.android.IntentResult;
+                                           ^
+MainActivity.java:55: error: package com.loopj.android.http does not exist
+import com.loopj.android.http.AsyncHttpClient;
+                             ^
+MainActivity.java:56: error: package com.loopj.android.http does not exist
+import com.loopj.android.http.AsyncHttpResponseHandler;
+                             ^
+MainActivity.java:59: error: cannot find symbol
+public class MainActivity extends Activity implements PINDialogListener {
+                                  ^
+  symbol: class Activity
+MainActivity.java:59: error: cannot find symbol
+public class MainActivity extends Activity implements PINDialogListener {
+                                                      ^
+  symbol: class PINDialogListener
+MainActivity.java:61: error: cannot find symbol
+	private NfcAdapter nfcA;
+	        ^
+  symbol:   class NfcAdapter
+  location: class MainActivity
+MainActivity.java:62: error: cannot find symbol
+	private PendingIntent mPendingIntent;
+	        ^
+  symbol:   class PendingIntent
+  location: class MainActivity
+MainActivity.java:63: error: cannot find symbol
+	private IntentFilter[] mFilters;
+	        ^
+  symbol:   class IntentFilter
+  location: class MainActivity
+MainActivity.java:70: error: cannot find symbol
+	private IsoDep lastTag = null;
+	        ^
+  symbol:   class IsoDep
+  location: class MainActivity
+MainActivity.java:87: error: cannot find symbol
+	CountDownTimer cdt;
+	^
+  symbol:   class CountDownTimer
+  location: class MainActivity
+MainActivity.java:193: error: cannot find symbol
+	protected void onCreate(Bundle savedInstanceState) {
+	                        ^
+  symbol:   class Bundle
+  location: class MainActivity
+MainActivity.java:250: error: cannot find symbol
+	Handler handler = new Handler() {
+	^
+  symbol:   class Handler
+  location: class MainActivity
+MainActivity.java:317: error: cannot find symbol
+	private ReaderMessage lastReaderMessage = null;
+	        ^
+  symbol:   class ReaderMessage
+  location: class MainActivity
+MainActivity.java:379: error: cannot find symbol
+	private void postMessage(ReaderMessage rm) {
+	                         ^
+  symbol:   class ReaderMessage
+  location: class MainActivity
+MainActivity.java:406: error: cannot find symbol
+	public void onMainTouch(View v) {
+	                        ^
+  symbol:   class View
+  location: class MainActivity
+MainActivity.java:414: error: cannot find symbol
+    public void onNewIntent(Intent intent) {
+                            ^
+  symbol:   class Intent
+  location: class MainActivity
+MainActivity.java:418: error: cannot find symbol
+    public void processIntent(Intent intent) {
+                              ^
+  symbol:   class Intent
+  location: class MainActivity
+MainActivity.java:453: error: cannot find symbol
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	                                                                 ^
+  symbol:   class Intent
+  location: class MainActivity
+MainActivity.java:483: error: cannot find symbol
+	public boolean onCreateOptionsMenu(Menu menu) {
+	                                   ^
+  symbol:   class Menu
+  location: class MainActivity
+MainActivity.java:497: error: cannot find symbol
+		public IsoDep tag;
+		       ^
+  symbol:   class IsoDep
+  location: class MainActivity.ReaderInput
+MainActivity.java:498: error: cannot find symbol
+		public ReaderMessage message;
+		       ^
+  symbol:   class ReaderMessage
+  location: class MainActivity.ReaderInput
+MainActivity.java:500: error: cannot find symbol
+		public ReaderInput(IsoDep tag, ReaderMessage message) {
+		                   ^
+  symbol:   class IsoDep
+  location: class MainActivity.ReaderInput
+MainActivity.java:500: error: cannot find symbol
+		public ReaderInput(IsoDep tag, ReaderMessage message) {
+		                               ^
+  symbol:   class ReaderMessage
+  location: class MainActivity.ReaderInput
+MainActivity.java:505: error: cannot find symbol
+		public ReaderInput(IsoDep tag, ReaderMessage message, String pincode) {
+		                   ^
+  symbol:   class IsoDep
+  location: class MainActivity.ReaderInput
+MainActivity.java:505: error: cannot find symbol
+		public ReaderInput(IsoDep tag, ReaderMessage message, String pincode) {
+		                               ^
+  symbol:   class ReaderMessage
+  location: class MainActivity.ReaderInput
+MainActivity.java:512: error: cannot find symbol
+	private class ProcessReaderMessage extends AsyncTask<ReaderInput, Void, ReaderMessage> {
+	                                           ^
+  symbol:   class AsyncTask
+  location: class MainActivity
+MainActivity.java:512: error: cannot find symbol
+	private class ProcessReaderMessage extends AsyncTask<ReaderInput, Void, ReaderMessage> {
+	                                                                        ^
+  symbol:   class ReaderMessage
+  location: class MainActivity
+MainActivity.java:516: error: cannot find symbol
+		protected ReaderMessage doInBackground(ReaderInput... params) {
+		          ^
+  symbol:   class ReaderMessage
+  location: class MainActivity.ProcessReaderMessage
+MainActivity.java:582: error: cannot find symbol
+		protected void onPostExecute(ReaderMessage result) {
+		                             ^
+  symbol:   class ReaderMessage
+  location: class MainActivity.ProcessReaderMessage
+MainActivity.java:639: error: cannot find symbol
+	public static class ErrorFeedbackDialogFragment extends DialogFragment {
+	                                                        ^
+  symbol:   class DialogFragment
+  location: class MainActivity
+MainActivity.java:649: error: cannot find symbol
+		public Dialog onCreateDialog(Bundle savedInstanceState) {
+		                             ^
+  symbol:   class Bundle
+  location: class ErrorFeedbackDialogFragment
+MainActivity.java:649: error: cannot find symbol
+		public Dialog onCreateDialog(Bundle savedInstanceState) {
+		       ^
+  symbol:   class Dialog
+  location: class ErrorFeedbackDialogFragment
+76 errors
+
+================
+
+
+#Eclipse somehow deleted
+#Reinstalled eclipse
+#added framework
+#downloaded checker-qual.jar
+
+=================
+
+Doing tutorial.
+Error for @Untainted, fixed by doing /*@Untainted*/
+In tutorial for tainter, validate() function is used to fix. Check for more info
+
+Other error fixed by:
+/*@SuppressWarnings("tainting")*/
+
+Is this because of the JDK version that requires commented annotations?
+=================
+
+Encryption example:
+
+Description	Resource	Path	Location	Type
+TYPE_PARAMETER cannot be resolved or is not a field	PossiblyUnencrypted.java	/encryption-checker/src/myqual	line 14	Java Problem
+The import org.checkerframework.framework.qual.TypeQualifier cannot be resolved	PossiblyUnencrypted.java	/encryption-checker/src/myqual	line 7	Java Problem
+TYPE_USE cannot be resolved or is not a field	PossiblyUnencrypted.java	/encryption-checker/src/myqual	line 14	Java Problem
+TYPE_PARAMETER cannot be resolved or is not a field	Encrypted.java	/encryption-checker/src/myqual	line 12	Java Problem
+TYPE_USE cannot be resolved or is not a field	Encrypted.java	/encryption-checker/src/myqual	line 12	Java Problem
+The import org.checkerframework.framework.qual.TypeQualifier cannot be resolved	Encrypted.java	/encryption-checker/src/myqual	line 6	Java Problem
+The import org.checkerframework.framework.qual.TypeQualifier cannot be resolved	PolyEncrypted.java	/encryption-checker/src/myqual	line 8	Java Problem
+TYPE_PARAMETER cannot be resolved or is not a field	PolyEncrypted.java	/encryption-checker/src/myqual	line 14	Java Problem
+TYPE_USE cannot be resolved or is not a field	PolyEncrypted.java	/encryption-checker/src/myqual	line 14	Java Problem
+
+http://types.cs.washington.edu/checker-framework/tutorial/webpages/encryption-checker-eclipse.html#issue1
+
+Then we got three java-errors:
+Description	Resource	Path	Location	Type
+The import org.checkerframework.framework.qual.TypeQualifier cannot be resolved	PossiblyUnencrypted.java	/encryption-checker/src/myqual	line 7	Java Problem
+The import org.checkerframework.framework.qual.TypeQualifier cannot be resolved	Encrypted.java	/encryption-checker/src/myqual	line 6	Java Problem
+The import org.checkerframework.framework.qual.TypeQualifier cannot be resolved	PolyEncrypted.java	/encryption-checker/src/myqual	line 8	Java Problem
+
+
+====================
+Navigate to Eclipse->Preferences->Checker Framework
+Under Additional compiler parameters, add -Aquals=myqual.Encrypted,myqual.PossiblyUnencrypted,myqual.PolyEncrypted
+Click Ok=
+====================
+
+Done this but only after I remove the imports I will get the checker framework messages.
+====================
+
+Link for Gradle:
+https://github.com/typetools/checker-framework-inference
+
+===================
+
+In encryption example, how does the checker know that a non-annotated string is unencrypted? Is this because of subtyping?
+
+http://types.cs.washington.edu/checker-framework/current/checker-framework-manual.html#subtyping-example
+
+===================
+GRADLE IN ECLIPSE:
+https://github.com/libgdx/libgdx/wiki/Setting-up-your-Development-Environment-%28Eclipse%2C-Intellij-IDEA%2C-NetBeans%29
+===================
+Found out that my eclipse version is really old (3.8).
+Installing newer version because the irma project gives me too much errors.
+
+Importing as gradle still gives errors.
+Compiled using gradlew assemble:
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileDebugJava'.
+> Cannot find System Java Compiler. Ensure that you have installed a JDK (not just a JRE) and configured your JAVA_HOME system variable to point to the according directory.
+
+JAVA_HOME unset somehow.
+
+====================
+
+redownloaded project
+set local.properties with sdk location
+
+"Project 'irma_android_cardproxy' is missing required source folder: 'gen'
+
+===================
+
+INSTALLED STS AND IT WORKED!!!
+https://github.com/spring-projects/eclipse-integration-gradle/blob/master/README.md#installing-from-the-sts-dashboard
+
+===================
+
+Checker-Framework en gradle
+
+http://types.cs.washington.edu/checker-framework/current/checker-framework-manual.html#gradle
+
+Downloaded:
+https://github.com/typetools/checker-framework/tree/master/checker/examples/GradleExamples/GradleJava8Example
+
+After I opened Tasks Quick Launcher via Gradle sts, I get:
+Could not find method isJava7()
+
+Cannot do checker-framework in my IRMA project. Has something to do with dependencies.
+
+Via command line also not possible.
+javac 1.8.0_66-internal Maybe this a problem?
+Other test projects work.
+
+https://gyazo.com/fa04584df0cf4bdfa04805ac49ed4771
+
+For command line do this again:
+http://types.cs.washington.edu/checker-framework/current/checker-framework-manual.html#javac-installation
+
+$source ~/.bash_profile
+
+When javacheck -g .... 100 errors.
+
+https://gyazo.com/5cd5e97781b62240949618f0be25c64e
+
+=========================================
+Via command-line proberen.
+Veranderen van gradle.build
+
+./gradlew assemble
+
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant TypeKind.PACKAGE
+  reason: class file for javax.lang.model.type.TypeKind not found
+warning: unknown enum constant TypeKind.INT
+warning: unknown enum constant TypeKind.BOOLEAN
+warning: unknown enum constant TypeKind.CHAR
+warning: unknown enum constant TypeKind.DOUBLE
+warning: unknown enum constant TypeKind.FLOAT
+warning: unknown enum constant TypeKind.LONG
+warning: unknown enum constant TypeKind.SHORT
+warning: unknown enum constant TypeKind.BYTE
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+warning: unknown enum constant ElementType.TYPE_USE
+warning: unknown enum constant ElementType.TYPE_PARAMETER
+
+error: InvocationTargetException when invoking constructor for class org.checkerframework.checker.nullness.KeyForVisitor; Underlying cause: InvocationTargetException when invoking constructor for class org.checkerframework.checker.nullness.KeyForAnnotatedTypeFactory; Underlying cause: com.sun.tools.javac.code.Symbol$CompletionFailure: class file for java.lang.Class$AnnotationData not found; invoke the compiler with -AprintErrorStack to see the stack trace.
+warning: -source 1.6 does not support type annotations
+warning: -source 1.6 does not support type annotations
+:compileDebugJava FAILED
+
+FAILURE: Build failed with an exception.
+
+command: $gradle build werkt wel met ander voorbeeld.
+Bij irma:
+A problem occurred evaluating root project 'irma_android_cardproxy-master'.
+> Failed to apply plugin [id 'com.android.application']
+   > Gradle version 2.2 is required. Current version is 2.10. If using the gradle wrapper, try editing the distributionUrl in /home/laptop/Documents/Bachelor-Scriptie/sparta-sparta-1.0.2/checker-framework-1.9.11/checker/irma_android_cardproxy-master/gradle/wrapper/gradle-wrapper.properties to gradle-2.2-all.zip
+
+=====
+FIX: Put this in gradle build. System.properties['com.android.build.gradle.overrideVersionCheck'] = 'true'
+
+=====
+
+In gradle --gui it works. In command-line not.
+
+=====
+
+Got it working:
+By using the following gradle.build
+apply plugin: 'com.android.application'
+apply plugin: 'maven'
+
+version="0.8"
+group="org.irmacard"
+
+ext.targetJavaVersion = JavaVersion.current().isJava7() ? JavaVersion.VERSION_1_7 : JavaVersion.VERSION_1_8
+
+
+buildscript {
+    System.properties['com.android.build.gradle.overrideVersionCheck'] = 'true'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.5.0'
+    }
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url "https://credentials.github.io/repos/maven2/"
+    }
+
+    // Use this to get minimal android library
+    maven {
+        url "https://raw.github.com/embarkmobile/zxing-android-minimal/mvn-repo/maven-repository/"
+    }
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.1"
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+    }
+
+    lintOptions {
+        // BCProv references javax.naming
+        // CredentialsAPI references java.awt and java.swing
+        disable 'InvalidPackage'
+    }
+}
+
+configurations {
+    if (targetJavaVersion.isJava7()) {
+        checkerFrameworkJavac {
+            description = 'a customization of the Open JDK javac compiler with additional support for type annotations'
+        }
+    }
+    checkerFrameworkAnnotatedJDK {
+       description = 'a copy of JDK classes with Checker Framework type qualifers inserted'
+    }
+    checkerFramework {
+       description = 'The Checker Framework: custom pluggable types for Java'
+    }
+}
+
+
+dependencies {
+    compile 'com.loopj.android:android-async-http:1.4.3'
+    compile 'com.android.support:support-v4:19.1.0'
+    compile 'com.google.code.gson:gson:2.2.2'
+
+    // zxing QR code libraries
+    compile 'com.embarkmobile:zxing-android-minimal:2.0.0@aar'
+    compile 'com.embarkmobile:zxing-android-integration:2.0.0@aar'
+    compile 'com.google.zxing:core:3.0.1'
+
+    compile "org.irmacard.android:irma_android_library:0.9.1"
+    compile 'net.sf.scuba:scuba_sc_android:0.0.7-irma'
+    compile 'net.sf.scuba:scuba_smartcards:0.0.7-irma'
+    
+    ext.checkerFrameworkVersion = '1.9.13'
+    ext.jdkVersion = JavaVersion.current().isJava7() ? 'jdk7' : 'jdk8'
+    checkerFrameworkAnnotatedJDK "org.checkerframework:${jdkVersion}:${checkerFrameworkVersion}"
+
+    if (targetJavaVersion.isJava7()) {
+        checkerFrameworkJavac "org.checkerframework:compiler:${checkerFrameworkVersion}"
+    }
+    checkerFramework "org.checkerframework:checker:${checkerFrameworkVersion}"
+    compile "org.checkerframework:checker-qual:${checkerFrameworkVersion}"
+}
+
+allprojects {
+    gradle.projectsEvaluated{
+        tasks.withType(JavaCompile).all { JavaCompile compile ->
+            compile.options.compilerArgs = [
+                    '-processor', 'org.checkerframework.checker.nullness.NullnessChecker',
+                    '-processorpath', "${configurations.checkerFramework.asPath}",
+                    // uncomment to turn Checker Framework errors into warnings
+                    // '-Awarns',
+                    "-Xbootclasspath/p:${configurations.checkerFrameworkAnnotatedJDK.asPath}"
+            ]
+            if (targetJavaVersion.isJava7()) {
+                compile.options.compilerArgs += ['-source', '7', '-target', '7']
+                options.bootClasspath = "${configurations.checkerFrameworkJavac.asPath}:"+System.getProperty("sun.boot.class.path") +":"+ options.bootClasspath
+                options.fork = true
+                options.forkOptions.jvmArgs += ["-Xbootclasspath/p:${configurations.checkerFrameworkJavac.asPath}"]
+            }
+        }
+    }
+}
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2'
+}
+
+https://groups.google.com/forum/?fromgroups#!topic/checker-framework-discuss/EDSAqca6sLs
+
+=============
+
+Installed Checker-framework and sparta freshly.
+After the comment of Suzanne I got:
+
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolResponseSerializer.java:21: error: [forbidden.flow] 
+		JsonObject obj = new JsonObject();
+		                 ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") JsonObject 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolResponseSerializer.java:22: error: [forbidden.flow] 
+		obj.addProperty("key", src.getKey());
+		                                 ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolResponseSerializer.java:23: error: [forbidden.flow] 
+		obj.addProperty("apdu", Hex.bytesToHexString(src.getAPDU().getBytes()));
+		                                            ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolResponseSerializer.java:23: error: [forbidden.flow] 
+		obj.addProperty("apdu", Hex.bytesToHexString(src.getAPDU().getBytes()));
+		                                                                   ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") byte @Sink("ANY") @Source("ANY") [] 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolResponseSerializer.java:23: error: [method.invocation.invalid] call to getAPDU() not allowed on the given receiver.
+		obj.addProperty("apdu", Hex.bytesToHexString(src.getAPDU().getBytes()));
+		                                                        ^
+  found   : @Sink({}) @Source("ANY") ProtocolResponse
+  required: @Sink("ANY") @Source("ANY") ProtocolResponse
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolResponseSerializer.java:24: error: [forbidden.flow] 
+		return obj;
+		       ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") JsonObject 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:96: error: [argument.type.incompatible] incompatible types in argument.
+    	Log.i(TAG,"Set state: " + state);
+    	                        ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("WRITE_LOGS") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:97: error: [assignment.type.incompatible] incompatible types in assignment.
+    	activityState = state;
+    	                ^
+  found   : @Sink({}) @Source("ANY") int
+  required: @Sink("ANY") @Source({}) int
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:166: error: [argument.type.incompatible] incompatible types in argument.
+    	((TextView)findViewById(R.id.feedback_text)).setText(message);
+    	                                                     ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("DISPLAY") @Source({}) CharSequence
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:176: error: [forbidden.flow] 
+		cdt = new CountDownTimer(FEEDBACK_SHOW_DELAY, 1000) {
+		      ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") CountDownTimer 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:220: error: [argument.type.incompatible] incompatible types in argument.
+    		nfcA.disableForegroundDispatch(this);
+    		                               ^
+  found   : @Sink({}) @Source("ANY") MainActivity
+  required: @Sink("NFC") @Source({}) Activity
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:227: error: [argument.type.incompatible] incompatible types in argument.
+        Log.i(TAG, "Action: " + getIntent().getAction());
+                              ^
+  found   : @Sink({}) @Source("INTENT") String
+  required: @Sink("WRITE_LOGS") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:228: error: [argument.type.incompatible] incompatible types in argument.
+        if (NfcAdapter.ACTION_TECH_DISCOVERED.equals(getIntent().getAction())) {
+                                                                          ^
+  found   : @Sink({}) @Source("INTENT") String
+  required: @Sink("ANY") @Source({}) Object
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:230: error: [argument.type.incompatible] incompatible types in argument.
+        } else if (Intent.ACTION_VIEW.equals(getIntent().getAction()) && "cardproxy".equals(getIntent().getScheme())) {
+                                                                  ^
+  found   : @Sink({}) @Source("INTENT") String
+  required: @Sink("ANY") @Source({}) Object
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:230: error: [argument.type.incompatible] incompatible types in argument.
+        } else if (Intent.ACTION_VIEW.equals(getIntent().getAction()) && "cardproxy".equals(getIntent().getScheme())) {
+                                                                                                                 ^
+  found   : @Sink({}) @Source("INTENT") String
+  required: @Sink("ANY") @Source({}) Object
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:238: error: [argument.type.incompatible] incompatible types in argument.
+        	nfcA.enableForegroundDispatch(this, mPendingIntent, mFilters, mTechLists);
+        	                              ^
+  found   : @Sink({}) @Source("ANY") MainActivity
+  required: @Sink("NFC") @Source({}) Activity
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:256: error: [forbidden.flow] 
+				AsyncHttpClient client = new AsyncHttpClient();
+				                         ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") AsyncHttpClient 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:260: error: [forbidden.flow] 
+				client.get(MainActivity.this, currentReaderURL, new AsyncHttpResponseHandler() {
+				                                                ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") AsyncHttpResponseHandler 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:323: error: [forbidden.flow] 
+				create();
+				      ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") Gson 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:320: error: [forbidden.flow] 
+		Gson gson = new GsonBuilder().
+		            ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") GsonBuilder 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:326: error: [forbidden.flow] 
+			JsonParser p = new JsonParser();
+			               ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") JsonParser 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:327: error: [forbidden.flow] 
+			String write_url = p.parse(data).getAsJsonObject().get("write_url").getAsString();
+			                                                                               ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:327: error: [argument.type.incompatible] incompatible types in argument.
+			String write_url = p.parse(data).getAsJsonObject().get("write_url").getAsString();
+			                           ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source("ANY") String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:328: error: [forbidden.flow] 
+			currentWriteURL = write_url;
+			                  ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:337: error: [argument.type.incompatible] incompatible types in argument.
+				Log.i(TAG, "Length (real): " + data);
+				                             ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("WRITE_LOGS") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:338: error: [forbidden.flow] 
+				JsonReader reader = new JsonReader(new StringReader(data));
+				                    ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") JsonReader 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:340: error: [forbidden.flow] 
+				rm = gson.fromJson(reader, ReaderMessage.class);
+				                  ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ReaderMessage 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:340: error: [forbidden.flow] 
+				rm = gson.fromJson(reader, ReaderMessage.class);
+				                   ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") JsonReader 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:345: error: [forbidden.flow] 
+			lastReaderMessage = rm;
+			                    ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ReaderMessage 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:359: error: [forbidden.flow] 
+					new ProcessReaderMessage().execute(new ReaderInput(lastTag, rm));
+					                                                            ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ReaderMessage 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:383: error: [forbidden.flow] 
+					create();
+					      ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") Gson 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:381: error: [forbidden.flow] 
+			Gson gson = new GsonBuilder().
+			            ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") GsonBuilder 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:384: error: [forbidden.flow] 
+			String data = gson.toJson(rm);
+			                         ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:384: error: [argument.type.incompatible] incompatible types in argument.
+			String data = gson.toJson(rm);
+			                          ^
+  found   : @Sink({}) @Source("ANY") ReaderMessage
+  required: @Sink("ANY") @Source("ANY") Object
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:385: error: [forbidden.flow] 
+			AsyncHttpClient client = new AsyncHttpClient();
+			                         ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") AsyncHttpClient 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:387: error: [forbidden.flow] 
+				client.post(MainActivity.this, currentWriteURL, new StringEntity(data) , "application/json",  new AsyncHttpResponseHandler() {
+				                                                                 ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:387: error: [forbidden.flow] 
+				client.post(MainActivity.this, currentWriteURL, new StringEntity(data) , "application/json",  new AsyncHttpResponseHandler() {
+				                                                                                              ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") AsyncHttpResponseHandler 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:391: error: [argument.type.incompatible] incompatible types in argument.
+						super.onSuccess(arg0, arg1);
+						                ^
+  found   : @Sink({}) @Source("ANY") int
+  required: @Sink("ANY") @Source("ANY") int
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:391: error: [argument.type.incompatible] incompatible types in argument.
+						super.onSuccess(arg0, arg1);
+						                      ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source("ANY") String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:396: error: [argument.type.incompatible] incompatible types in argument.
+						super.onFailure(arg0, arg1);
+						                ^
+  found   : @Sink({}) @Source("ANY") Throwable
+  required: @Sink("ANY") @Source("ANY") Throwable
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:396: error: [argument.type.incompatible] incompatible types in argument.
+						super.onFailure(arg0, arg1);
+						                      ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source("ANY") String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:420: error: [forbidden.flow] 
+    	IsoDep tag = IsoDep.get(tagFromIntent);
+    	                       ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") IsoDep 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:420: error: [argument.type.incompatible] incompatible types in argument.
+    	IsoDep tag = IsoDep.get(tagFromIntent);
+    	                        ^
+  found   : @Sink({}) @Source("INTENT") Tag
+  required: @Sink("ANY") @Source("ANY") Tag
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:425: error: [forbidden.flow] 
+    		lastTag = tag;
+    		          ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") IsoDep 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:454: error: [argument.type.incompatible] incompatible types in argument.
+		super.onActivityResult(requestCode, resultCode, data);
+		                                                ^
+  found   : @Sink({}) @Source("ANY") Intent
+  required: @Sink("ANY") @Source({}) Intent
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:456: error: [forbidden.flow] 
+				.parseActivityResult(requestCode, resultCode, data);
+				                    ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") IntentResult 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:456: error: [argument.type.incompatible] incompatible types in argument.
+				.parseActivityResult(requestCode, resultCode, data);
+				                     ^
+  found   : @Sink({}) @Source("ANY") int
+  required: @Sink("ANY") @Source("ANY") int
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:456: error: [argument.type.incompatible] incompatible types in argument.
+				.parseActivityResult(requestCode, resultCode, data);
+				                                  ^
+  found   : @Sink({}) @Source("ANY") int
+  required: @Sink("ANY") @Source("ANY") int
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:456: error: [argument.type.incompatible] incompatible types in argument.
+				.parseActivityResult(requestCode, resultCode, data);
+				                                              ^
+  found   : @Sink({}) @Source("ANY") Intent
+  required: @Sink("ANY") @Source("ANY") Intent
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:460: error: [forbidden.flow] 
+			String contents = scanResult.getContents();
+			                                        ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:462: error: [forbidden.flow] 
+				gotoConnectingState(contents);
+				                    ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:468: error: [argument.type.incompatible] incompatible types in argument.
+		Log.i(TAG, "Start channel listening: " + url);
+		                                       ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("WRITE_LOGS") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:469: error: [assignment.type.incompatible] incompatible types in assignment.
+		currentReaderURL = url;
+		                   ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:478: error: [forbidden.flow] 
+		DialogFragment newFragment = EnterPINDialogFragment.getInstance(tries);
+		                                                               ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") EnterPINDialogFragment 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:479: error: [method.invocation.invalid] call to show(android.app.FragmentManager,java.lang.String) not allowed on the given receiver.
+	    newFragment.show(getFragmentManager(), "pinentry");
+	                    ^
+  found   : @Sink("ANY") @Source("ANY") DialogFragment
+  required: @Sink("DISPLAY") @Source({}) DialogFragment
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:490: error: [forbidden.flow] 
+		IntentIntegrator integrator = new IntentIntegrator(this);
+		                              ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") IntentIntegrator 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:490: error: [argument.type.incompatible] incompatible types in argument.
+		IntentIntegrator integrator = new IntentIntegrator(this);
+		                                                   ^
+  found   : @Sink({}) @Source("ANY") MainActivity
+  required: @Sink("ANY") @Source("ANY") Activity
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:491: error: [argument.type.incompatible] incompatible types in argument.
+		integrator.setPrompt(message);
+		                     ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source("ANY") String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:501: error: [assignment.type.incompatible] incompatible types in assignment.
+			this.tag = tag;
+			           ^
+  found   : @Sink({}) @Source("ANY") IsoDep
+  required: @Sink("ANY") @Source({}) IsoDep
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:502: error: [assignment.type.incompatible] incompatible types in assignment.
+			this.message = message;
+			               ^
+  found   : @Sink({}) @Source("ANY") ReaderMessage
+  required: @Sink("ANY") @Source({}) ReaderMessage
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:506: error: [assignment.type.incompatible] incompatible types in assignment.
+			this.tag = tag;
+			           ^
+  found   : @Sink({}) @Source("ANY") IsoDep
+  required: @Sink("ANY") @Source({}) IsoDep
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:507: error: [assignment.type.incompatible] incompatible types in assignment.
+			this.message = message;
+			               ^
+  found   : @Sink({}) @Source("ANY") ReaderMessage
+  required: @Sink("ANY") @Source({}) ReaderMessage
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:508: error: [assignment.type.incompatible] incompatible types in assignment.
+			this.pincode = pincode;
+			               ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:532: error: [forbidden.flow] 
+			IdemixService is = new IdemixService(new IsoDepCardService(tag));
+			                   ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") IdemixService 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:532: error: [forbidden.flow] 
+			IdemixService is = new IdemixService(new IsoDepCardService(tag));
+			                                     ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") IsoDepCardService 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:541: error: [forbidden.flow] 
+						tries = is.sendCredentialPin(input.pincode.getBytes());
+						                            ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") int 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:547: error: [forbidden.flow] 
+					ProtocolResponses responses = new ProtocolResponses();
+					                              ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ProtocolResponses 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:549: error: [forbidden.flow] 
+						ResponseAPDU apdu_response = is.transmit(c.getAPDU());
+						                                        ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ResponseAPDU 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:549: error: [forbidden.flow] 
+						ResponseAPDU apdu_response = is.transmit(c.getAPDU());
+						                                                  ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") CommandAPDU 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:550: error: [forbidden.flow] 
+						responses.put(c.getKey(), 
+						                      ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:551: error: [forbidden.flow] 
+								new ProtocolResponse(c.getKey(), apdu_response));
+								^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ProtocolResponse 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:551: error: [forbidden.flow] 
+								new ProtocolResponse(c.getKey(), apdu_response));
+								                             ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:551: error: [forbidden.flow] 
+								new ProtocolResponse(c.getKey(), apdu_response));
+								                                 ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ResponseAPDU 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:556: error: [forbidden.flow] 
+					return new ReaderMessage(ReaderMessage.TYPE_RESPONSE, rm.name, rm.id, new ResponseArguments(responses));
+					                                                                                            ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ProtocolResponses 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:567: error: [method.invocation.invalid] call to getMessage() not allowed on the given receiver.
+				if(e.getMessage().contains("Command failed:") && e.getSW() == 0x6982) {
+				               ^
+  found   : @Sink({}) @Source("ANY") CardServiceException
+  required: @Sink("ANY") @Source("ANY") CardServiceException
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:567: error: [method.invocation.invalid] call to getSW() not allowed on the given receiver.
+				if(e.getMessage().contains("Command failed:") && e.getSW() == 0x6982) {
+				                                                        ^
+  found   : @Sink({}) @Source("ANY") CardServiceException
+  required: @Sink("ANY") @Source("ANY") CardServiceException
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:622: error: [argument.type.incompatible] incompatible types in argument.
+		Log.i(TAG, "PIN entered: " + dialogPincode);
+		                           ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("WRITE_LOGS") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:643: error: [argument.type.incompatible] incompatible types in argument.
+			args.putString("message", message);
+			                          ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("BUNDLE") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:644: error: [argument.type.incompatible] incompatible types in argument.
+			args.putString("title", title);
+			                        ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("BUNDLE") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:652: error: [argument.type.incompatible] incompatible types in argument.
+			.setTitle(getArguments().getString("title"))
+			                                  ^
+  found   : @Sink({}) @Source("BUNDLE") String
+  required: @Sink("DISPLAY") @Source({}) CharSequence
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:651: error: [argument.type.incompatible] incompatible types in argument.
+			builder.setMessage(getArguments().getString("message"))
+			                                           ^
+  found   : @Sink({}) @Source("BUNDLE") String
+  required: @Sink("DISPLAY") @Source({}) CharSequence
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:26: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.type = type;
+		            ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:27: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.name = name;
+		            ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:31: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.type = type;
+		            ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:32: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.name = name;
+		            ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:33: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.id = id;
+		          ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:37: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.type = type;
+		            ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:38: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.name = name;
+		            ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:39: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.id = id;
+		          ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:40: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.arguments = arguments;		
+		                 ^
+  found   : @Sink({}) @Source("ANY") ReaderMessageArguments
+  required: @Sink("ANY") @Source({}) ReaderMessageArguments
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ConfirmationDialogFragment.java:22: error: [argument.type.incompatible] incompatible types in argument.
+		args.putString("message", message);
+		                          ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("BUNDLE") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ConfirmationDialogFragment.java:30: error: [argument.type.incompatible] incompatible types in argument.
+        builder.setMessage(getArguments().getString("message"))
+                                                   ^
+  found   : @Sink({}) @Source("BUNDLE") String
+  required: @Sink("DISPLAY") @Source({}) CharSequence
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ConfirmationDialogFragment.java:52: error: [assignment.type.incompatible] incompatible types in assignment.
+            mListener = (ConfirmationDialogListener) activity;
+                        ^
+  found   : @Sink({}) @Source("ANY") ConfirmationDialogListener
+  required: @Sink("ANY") @Source({}) ConfirmationDialogListener
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ConfirmationDialogFragment.java:56: error: [argument.type.incompatible] incompatible types in argument.
+                    + " must implement PINDialogListener");
+                    ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source("ANY") String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ConfirmationDialogFragment.java:55: error: [forbidden.flow] 
+            throw new ClassCastException(activity.toString()
+                  ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ClassCastException 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolCommandDeserializer.java:22: error: [forbidden.flow] 
+		return new ProtocolCommand(
+		       ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ProtocolCommand 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolCommandDeserializer.java:23: error: [forbidden.flow] 
+				json.getAsJsonObject().get("key").getAsString(), "",
+				                                             ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolCommandDeserializer.java:23: error: [method.invocation.invalid] call to getAsJsonObject() not allowed on the given receiver.
+				json.getAsJsonObject().get("key").getAsString(), "",
+				                    ^
+  found   : @Sink({}) @Source("ANY") JsonElement
+  required: @Sink("ANY") @Source("ANY") JsonElement
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolCommandDeserializer.java:24: error: [forbidden.flow] 
+				new CommandAPDU(Hex.hexStringToBytes(json.getAsJsonObject().get("command").getAsString())));
+				^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") CommandAPDU 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolCommandDeserializer.java:24: error: [forbidden.flow] 
+				new CommandAPDU(Hex.hexStringToBytes(json.getAsJsonObject().get("command").getAsString())));
+				                                    ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") byte @Sink("ANY") @Source("ANY") [] 
+  forbidden flows:
+    ANY -> ANY 
+100 errors
+:compileReleaseJavaWithJavac FAILED
+
