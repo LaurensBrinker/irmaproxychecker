@@ -1601,3 +1601,27 @@ After the comment of Suzanne I got:
 100 errors
 :compileReleaseJavaWithJavac FAILED
 
+=================
+
+ContactManager example.
+Installed checker-framework-inference.
+ant infer:
+
+Exception in thread "main" java.lang.UnsupportedClassVersionError: org/objectweb/asm/ClassVisitor : Unsupported major.minor version 52.0
+     [exec]    at java.lang.ClassLoader.defineClass1(Native Method)
+     [exec]    at java.lang.ClassLoader.defineClass(ClassLoader.java:803)
+     [exec]    at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+     [exec]    at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+     [exec]    at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+     [exec]    at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+     [exec]    at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+     [exec]    at java.security.AccessController.doPrivileged(Native Method)
+     [exec]    at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+     [exec]    at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+     [exec]    at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+     [exec]    at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+     [exec]    at annotator.Main.main(Main.java:563)
+Target 'infer-sink' failed with message 'exec returned: 1'.
+
+============
+Android is java 7

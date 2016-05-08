@@ -105,10 +105,10 @@ if (typecheck) {
         compile.options.compilerArgs = [
                 '-processor', 'sparta.checkers.FlowChecker',
                 '-processorpath', "${configurations.sparta.asPath}:${configurations.checkerFramework.asPath}",
+                '-AflowPolicy=/Flow-Policy/policy.flow'
                 // uncomment to turn Checker Framework errors into warnings
                 //'-Awarns',
-                "-AprintErrorStack"
-
+                //"-AprintErrorStack"
         ]
             compile.options.compilerArgs += ['-source', '7', '-target', '7']
             options.bootClasspath = "${configurations.checkerFrameworkJavac.asPath}:" + System.getProperty("sun.boot.class.path") + ":" + options.bootClasspath
