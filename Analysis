@@ -1,0 +1,102 @@
+Analysis
+
+
+Tools:
+https://github.com/ashishb/android-security-awesome
+
+====================
+====== ONLINE ======
+====================
+
+===============================================
+AndroTotal:
+http://andrototal.org/sample/57511b4c9299037cc8a999ab640e8dfc1461a94a13426ca4d790961da755adff
+===============================================
+CopperDroid:
+Not working anymore
+===============================================
+TraceDroid:
+[2016-05-16 22:57:52,023   package] Starting static analysis
+[2016-05-16 22:57:52,134   package] Starting dynamic analysis
+[2016-05-16 22:57:52,135   package] Initializing emulator
+[2016-05-16 22:57:52,135   package] Initializing attributes...
+[2016-05-16 22:57:52,136   package] + avd_name: android.2.3.3
+[2016-05-16 22:57:52,136   package] + avd_home: /home/vvdveen/.android/avd/
+[2016-05-16 22:57:52,136   package] + avd_dir : /home/vvdveen/.android/avd/android.2.3.3.avd.backup
+[2016-05-16 22:57:52,137   package] + avd_ini : /home/vvdveen/.android/avd/android.2.3.3.ini.backup
+[2016-05-16 22:57:52,138   package] Generating a fresh copy...
+[2016-05-16 22:57:52,749   package] ++ Starting emulator
+[2016-05-16 22:57:52,750   package] Searching for two available TCP ports
+[2016-05-16 22:57:52,750   package] Trying port 5794 and 5795
+[2016-05-16 22:57:52,752   package] Starting the emulator with arguments: ['emulator', '-ports', '5794,5795', '-avd', 'android.2.3.3.84s0Wh', '-system', '/tracedroid/tap/src/lib/../../lib/images/system.gapps.img', '-no-audio', '-no-window']
+[2016-05-16 22:57:52,755   package] Waiting for the emulator to complete boot procedure
+[2016-05-16 22:58:35,847   package] Connecting via TCP
+[2016-05-16 22:58:35,848   package] Unlocking the home screen
+[2016-05-16 22:58:37,935   package] ++ Figuring out time discrepancy between host and guest
+[2016-05-16 22:58:38,439   package] Host - Guest = 0 s
+[2016-05-16 22:58:38,440   package] ++ Installing APK
+[2016-05-16 22:58:53,169   package] ++ --> Failed to install /mnt/sans-nas/tracedroid/input/37ead3d706b9229a2b08837ef080780f: Unknown error: 
+stdout: 	pkg: /data/local/tmp/37ead3d706b9229a2b08837ef080780f
+Failure [INSTALL_FAILED_OLDER_SDK]
+
+stderr: 2064 KB/s (1535914 bytes in 0.726s)
+
+[2016-05-16 22:58:53,234   package] Destroying copy
+===============================================
+SandDroid:
+http://sanddroid.xjtu.edu.cn/report?apk_md5=37EAD3D706B9229A2B08837EF080780F
+===============================================
+Dexter:
+https://dexter.dexlabs.org/dashboard/analysis/5261/#general
+===============================================
+
+
+====================
+====== STATIC ======
+====================
+
+AndroWarn:
+https://github.com/maaaaz/androwarn/
+
+DiDFail:
+https://www.cs.cmu.edu/~wklieber/didfail/
+
+FlowDroid:
+https://blogs.uni-paderborn.de/sse/tools/flowdroid/
+
+Armandroid:
+http://amandroid.sireum.org/
+
+Smalisca:
+https://github.com/dorneanu/smalisca
+
+====================
+====== DYNAMIC =====
+====================
+
+Voor NFC analyse:
+http://www.mulliner.org/blog/blosxom.cgi/security/androiddbiv02.html
+
+DroidBox:
+https://github.com/pjlantz/droidbox
+
+QARK:
+https://github.com/linkedin/qark/
+
+====================
+====== FUZZING =====
+====================
+
+Radamsa:
+https://github.com/anestisb/radamsa-android
+
+
+Definition Malware.
+Malware vs undesired actions
+
+
+Secure coding by owasp:
+https://www.owasp.org/images/0/08/OWASP_SCP_Quick_Reference_Guide_v2.pdf
+
+IntelliDroid:
+https://www.internetsociety.org/sites/default/files/blogs-media/intellidroid-targeted-input-generator-dynamic-analysis-android-malware.pdf
