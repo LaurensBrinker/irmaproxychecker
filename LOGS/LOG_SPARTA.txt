@@ -1625,3 +1625,11 @@ Target 'infer-sink' failed with message 'exec returned: 1'.
 
 ============
 Android is java 7
+
+============
+
+A smart card is an embedded device that
+communicates with the environment through Application Protocol Data Units
+(APDUs) - byte arrays formatted according to the ISO7816 specification [1]. (Efficient Selective Disclosure on Smart Cards
+using Idemix Pim Vullers).
+

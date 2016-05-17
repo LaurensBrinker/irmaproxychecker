@@ -15,6 +15,9 @@ import java.lang.annotation.ElementType;
 
 /*>>>import sparta.checkers.quals.Sink;
 import sparta.checkers.quals.Source;
+import sparta.checkers.quals.*;
+import sparta.checkers.quals.FlowPermission;
+import static sparta.checkers.quals.FlowPermissionString.*;
 */
 
 /**
@@ -23,9 +26,9 @@ import sparta.checkers.quals.Source;
  */
 public class ProtocolResponseSerializer implements JsonSerializer<ProtocolResponse> {
 	@Override
-	public JsonElement serialize(ProtocolResponse src, Type typeOfSrc,
+	public /*@Source(ANY) @Sink(INTERNET)*/ JsonElement serialize( /*@Source(NFC)*/ ProtocolResponse src, Type typeOfSrc,
 			JsonSerializationContext context) {
-		/*@Source("USER_INPUT")*/JsonObject obj = new JsonObject();
+		/*@Source(NFC) @Sink(INTERNET)*/ JsonObject obj = new JsonObject();
 		obj.addProperty("key", src.getKey());
 		obj.addProperty("apdu", Hex.bytesToHexString(src.getAPDU().getBytes()));
 		return obj;

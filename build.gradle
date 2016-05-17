@@ -105,7 +105,7 @@ if (typecheck) {
         compile.options.compilerArgs = [
                 '-processor', 'sparta.checkers.FlowChecker',
                 '-processorpath', "${configurations.sparta.asPath}:${configurations.checkerFramework.asPath}",
-                '-AflowPolicy=/Flow-Policy/policy.flow'
+                '-AflowPolicy=/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/Flow-Policy/policy.flow'
                 // uncomment to turn Checker Framework errors into warnings
                 //'-Awarns',
                 //"-AprintErrorStack"
