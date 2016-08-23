@@ -1,0 +1,619 @@
+$ gradle compileReleaseJavaWithJavac -Ptypecheck=true
+
+
+:preBuild UP-TO-DATE
+:preReleaseBuild UP-TO-DATE
+:checkReleaseManifest
+:preDebugBuild UP-TO-DATE
+:prepareComEmbarkmobileZxingAndroidIntegration200Library UP-TO-DATE
+:prepareComEmbarkmobileZxingAndroidMinimal200Library UP-TO-DATE
+:prepareNetSfScubaScuba_sc_android007IrmaLibrary UP-TO-DATE
+:prepareOrgIrmacardAndroidIrma_android_library091Library UP-TO-DATE
+:prepareReleaseDependencies
+:compileReleaseAidl UP-TO-DATE
+:compileReleaseRenderscript UP-TO-DATE
+:generateReleaseBuildConfig UP-TO-DATE
+:generateReleaseAssets UP-TO-DATE
+:mergeReleaseAssets UP-TO-DATE
+:generateReleaseResValues UP-TO-DATE
+:generateReleaseResources UP-TO-DATE
+:mergeReleaseResources UP-TO-DATE
+:processReleaseManifest UP-TO-DATE
+:processReleaseResources UP-TO-DATE
+:generateReleaseSources UP-TO-DATE
+> Building 95% > :compileReleaseJavaWithJavac^Claptop@LAPTOP:~/Documents/Bachelgradle compileReleaseJavaWithJavac -Ptypecheck=true > output.txt
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolResponseSerializer.java:31: error: [forbidden.flow] 
+		/*@Source(NFC) @Sink(INTERNET)*/ JsonObject obj = new JsonObject();
+		                                                  ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") JsonObject 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolResponseSerializer.java:32: error: [forbidden.flow] 
+		obj.addProperty("key", src.getKey());
+		                                 ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolResponseSerializer.java:33: error: [forbidden.flow] 
+		obj.addProperty("apdu", Hex.bytesToHexString(src.getAPDU().getBytes()));
+		                                            ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolResponseSerializer.java:33: error: [forbidden.flow] 
+		obj.addProperty("apdu", Hex.bytesToHexString(src.getAPDU().getBytes()));
+		                                                                   ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") byte @Sink("ANY") @Source("ANY") [] 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolResponseSerializer.java:33: error: [method.invocation.invalid] call to getAPDU() not allowed on the given receiver.
+		obj.addProperty("apdu", Hex.bytesToHexString(src.getAPDU().getBytes()));
+		                                                        ^
+  found   : @Sink("INTERNET") @Source("NFC") ProtocolResponse
+  required: @Sink("ANY") @Source("ANY") ProtocolResponse
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolResponseSerializer.java:34: error: [forbidden.flow] 
+		return obj;
+		       ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("NFC") JsonObject 
+  forbidden flows:
+    NFC -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:96: error: [argument.type.incompatible] incompatible types in argument.
+    	Log.i(TAG,"Set state: " + state);
+    	                        ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("WRITE_LOGS") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:97: error: [assignment.type.incompatible] incompatible types in assignment.
+    	activityState = state;
+    	                ^
+  found   : @Sink({}) @Source("ANY") int
+  required: @Sink("ANY") @Source({}) int
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:166: error: [argument.type.incompatible] incompatible types in argument.
+    	((TextView)findViewById(R.id.feedback_text)).setText(message);
+    	                                                     ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("DISPLAY") @Source({}) CharSequence
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:176: error: [forbidden.flow] 
+		cdt = new CountDownTimer(FEEDBACK_SHOW_DELAY, 1000) {
+		      ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") CountDownTimer 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:220: error: [argument.type.incompatible] incompatible types in argument.
+    		nfcA.disableForegroundDispatch(this);
+    		                               ^
+  found   : @Sink({}) @Source("ANY") MainActivity
+  required: @Sink("NFC") @Source({}) Activity
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:227: error: [argument.type.incompatible] incompatible types in argument.
+        Log.i(TAG, "Action: " + getIntent().getAction());
+                              ^
+  found   : @Sink({}) @Source("INTENT") String
+  required: @Sink("WRITE_LOGS") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:228: error: [argument.type.incompatible] incompatible types in argument.
+        if (NfcAdapter.ACTION_TECH_DISCOVERED.equals(getIntent().getAction())) {
+                                                                          ^
+  found   : @Sink({}) @Source("INTENT") String
+  required: @Sink("ANY") @Source({}) Object
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:230: error: [argument.type.incompatible] incompatible types in argument.
+        } else if (Intent.ACTION_VIEW.equals(getIntent().getAction()) && "cardproxy".equals(getIntent().getScheme())) {
+                                                                  ^
+  found   : @Sink({}) @Source("INTENT") String
+  required: @Sink("ANY") @Source({}) Object
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:230: error: [argument.type.incompatible] incompatible types in argument.
+        } else if (Intent.ACTION_VIEW.equals(getIntent().getAction()) && "cardproxy".equals(getIntent().getScheme())) {
+                                                                                                                 ^
+  found   : @Sink({}) @Source("INTENT") String
+  required: @Sink("ANY") @Source({}) Object
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:238: error: [argument.type.incompatible] incompatible types in argument.
+        	nfcA.enableForegroundDispatch(this, mPendingIntent, mFilters, mTechLists);
+        	                              ^
+  found   : @Sink({}) @Source("ANY") MainActivity
+  required: @Sink("NFC") @Source({}) Activity
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:256: error: [forbidden.flow] 
+				AsyncHttpClient client = new AsyncHttpClient();
+				                         ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") AsyncHttpClient 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:260: error: [forbidden.flow] 
+				client.get(MainActivity.this, currentReaderURL, new AsyncHttpResponseHandler() {
+				                                                ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") AsyncHttpResponseHandler 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:323: error: [forbidden.flow] 
+				create();
+				      ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") Gson 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:320: error: [forbidden.flow] 
+		Gson gson = new GsonBuilder().
+		            ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") GsonBuilder 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:326: error: [forbidden.flow] 
+			JsonParser p = new JsonParser();
+			               ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") JsonParser 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:327: error: [forbidden.flow] 
+			String write_url = p.parse(data).getAsJsonObject().get("write_url").getAsString();
+			                                                                               ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:327: error: [argument.type.incompatible] incompatible types in argument.
+			String write_url = p.parse(data).getAsJsonObject().get("write_url").getAsString();
+			                           ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source("ANY") String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:328: error: [forbidden.flow] 
+			currentWriteURL = write_url;
+			                  ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:337: error: [argument.type.incompatible] incompatible types in argument.
+				Log.i(TAG, "Length (real): " + data);
+				                             ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("WRITE_LOGS") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:338: error: [forbidden.flow] 
+				JsonReader reader = new JsonReader(new StringReader(data));
+				                    ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") JsonReader 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:340: error: [forbidden.flow] 
+				rm = gson.fromJson(reader, ReaderMessage.class);
+				                  ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ReaderMessage 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:340: error: [forbidden.flow] 
+				rm = gson.fromJson(reader, ReaderMessage.class);
+				                   ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") JsonReader 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:345: error: [forbidden.flow] 
+			lastReaderMessage = rm;
+			                    ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ReaderMessage 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:359: error: [forbidden.flow] 
+					new ProcessReaderMessage().execute(new ReaderInput(lastTag, rm));
+					                                                            ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ReaderMessage 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:383: error: [forbidden.flow] 
+					create();
+					      ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") Gson 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:381: error: [forbidden.flow] 
+			Gson gson = new GsonBuilder().
+			            ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") GsonBuilder 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:384: error: [forbidden.flow] 
+			String data = gson.toJson(rm);
+			                         ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:384: error: [argument.type.incompatible] incompatible types in argument.
+			String data = gson.toJson(rm);
+			                          ^
+  found   : @Sink({}) @Source("ANY") ReaderMessage
+  required: @Sink("ANY") @Source("ANY") Object
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:385: error: [forbidden.flow] 
+			AsyncHttpClient client = new AsyncHttpClient();
+			                         ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") AsyncHttpClient 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:387: error: [forbidden.flow] 
+				client.post(MainActivity.this, currentWriteURL, new StringEntity(data) , "application/json",  new AsyncHttpResponseHandler() {
+				                                                                 ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:387: error: [forbidden.flow] 
+				client.post(MainActivity.this, currentWriteURL, new StringEntity(data) , "application/json",  new AsyncHttpResponseHandler() {
+				                                                                                              ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") AsyncHttpResponseHandler 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:391: error: [argument.type.incompatible] incompatible types in argument.
+						super.onSuccess(arg0, arg1);
+						                ^
+  found   : @Sink({}) @Source("ANY") int
+  required: @Sink("ANY") @Source("ANY") int
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:391: error: [argument.type.incompatible] incompatible types in argument.
+						super.onSuccess(arg0, arg1);
+						                      ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source("ANY") String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:396: error: [argument.type.incompatible] incompatible types in argument.
+						super.onFailure(arg0, arg1);
+						                ^
+  found   : @Sink({}) @Source("ANY") Throwable
+  required: @Sink("ANY") @Source("ANY") Throwable
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:396: error: [argument.type.incompatible] incompatible types in argument.
+						super.onFailure(arg0, arg1);
+						                      ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source("ANY") String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:420: error: [forbidden.flow] 
+    	IsoDep tag = IsoDep.get(tagFromIntent);
+    	                       ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") IsoDep 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:420: error: [argument.type.incompatible] incompatible types in argument.
+    	IsoDep tag = IsoDep.get(tagFromIntent);
+    	                        ^
+  found   : @Sink({}) @Source("INTENT") Tag
+  required: @Sink("ANY") @Source("ANY") Tag
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:425: error: [forbidden.flow] 
+    		lastTag = tag;
+    		          ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") IsoDep 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:454: error: [argument.type.incompatible] incompatible types in argument.
+		super.onActivityResult(requestCode, resultCode, data);
+		                                                ^
+  found   : @Sink({}) @Source("ANY") Intent
+  required: @Sink("ANY") @Source({}) Intent
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:456: error: [forbidden.flow] 
+				.parseActivityResult(requestCode, resultCode, data);
+				                    ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") IntentResult 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:456: error: [argument.type.incompatible] incompatible types in argument.
+				.parseActivityResult(requestCode, resultCode, data);
+				                     ^
+  found   : @Sink({}) @Source("ANY") int
+  required: @Sink("ANY") @Source("ANY") int
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:456: error: [argument.type.incompatible] incompatible types in argument.
+				.parseActivityResult(requestCode, resultCode, data);
+				                                  ^
+  found   : @Sink({}) @Source("ANY") int
+  required: @Sink("ANY") @Source("ANY") int
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:456: error: [argument.type.incompatible] incompatible types in argument.
+				.parseActivityResult(requestCode, resultCode, data);
+				                                              ^
+  found   : @Sink({}) @Source("ANY") Intent
+  required: @Sink("ANY") @Source("ANY") Intent
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:460: error: [forbidden.flow] 
+			String contents = scanResult.getContents();
+			                                        ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:462: error: [forbidden.flow] 
+				gotoConnectingState(contents);
+				                    ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:468: error: [argument.type.incompatible] incompatible types in argument.
+		Log.i(TAG, "Start channel listening: " + url);
+		                                       ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("WRITE_LOGS") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:469: error: [assignment.type.incompatible] incompatible types in assignment.
+		currentReaderURL = url;
+		                   ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:478: error: [forbidden.flow] 
+		DialogFragment newFragment = EnterPINDialogFragment.getInstance(tries);
+		                                                               ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") EnterPINDialogFragment 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:479: error: [method.invocation.invalid] call to show(android.app.FragmentManager,java.lang.String) not allowed on the given receiver.
+	    newFragment.show(getFragmentManager(), "pinentry");
+	                    ^
+  found   : @Sink("ANY") @Source("ANY") DialogFragment
+  required: @Sink("DISPLAY") @Source({}) DialogFragment
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:490: error: [forbidden.flow] 
+		IntentIntegrator integrator = new IntentIntegrator(this);
+		                              ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") IntentIntegrator 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:490: error: [argument.type.incompatible] incompatible types in argument.
+		IntentIntegrator integrator = new IntentIntegrator(this);
+		                                                   ^
+  found   : @Sink({}) @Source("ANY") MainActivity
+  required: @Sink("ANY") @Source("ANY") Activity
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:491: error: [argument.type.incompatible] incompatible types in argument.
+		integrator.setPrompt(message);
+		                     ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source("ANY") String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:501: error: [assignment.type.incompatible] incompatible types in assignment.
+			this.tag = tag;
+			           ^
+  found   : @Sink({}) @Source("ANY") IsoDep
+  required: @Sink("ANY") @Source({}) IsoDep
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:502: error: [assignment.type.incompatible] incompatible types in assignment.
+			this.message = message;
+			               ^
+  found   : @Sink({}) @Source("ANY") ReaderMessage
+  required: @Sink("ANY") @Source({}) ReaderMessage
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:506: error: [assignment.type.incompatible] incompatible types in assignment.
+			this.tag = tag;
+			           ^
+  found   : @Sink({}) @Source("ANY") IsoDep
+  required: @Sink("ANY") @Source({}) IsoDep
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:507: error: [assignment.type.incompatible] incompatible types in assignment.
+			this.message = message;
+			               ^
+  found   : @Sink({}) @Source("ANY") ReaderMessage
+  required: @Sink("ANY") @Source({}) ReaderMessage
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:508: error: [assignment.type.incompatible] incompatible types in assignment.
+			this.pincode = pincode;
+			               ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:532: error: [forbidden.flow] 
+			IdemixService is = new IdemixService(new IsoDepCardService(tag));
+			                   ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") IdemixService 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:532: error: [forbidden.flow] 
+			IdemixService is = new IdemixService(new IsoDepCardService(tag));
+			                                     ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") IsoDepCardService 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:541: error: [forbidden.flow] 
+						tries = is.sendCredentialPin(input.pincode.getBytes());
+						                            ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") int 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:547: error: [forbidden.flow] 
+					ProtocolResponses responses = new ProtocolResponses();
+					                              ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ProtocolResponses 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:549: error: [forbidden.flow] 
+						ResponseAPDU apdu_response = is.transmit(c.getAPDU());
+						                                        ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ResponseAPDU 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:549: error: [forbidden.flow] 
+						ResponseAPDU apdu_response = is.transmit(c.getAPDU());
+						                                                  ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") CommandAPDU 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:550: error: [forbidden.flow] 
+						responses.put(c.getKey(), 
+						                      ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:551: error: [forbidden.flow] 
+								new ProtocolResponse(c.getKey(), apdu_response));
+								^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ProtocolResponse 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:551: error: [forbidden.flow] 
+								new ProtocolResponse(c.getKey(), apdu_response));
+								                             ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:551: error: [forbidden.flow] 
+								new ProtocolResponse(c.getKey(), apdu_response));
+								                                 ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ResponseAPDU 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:556: error: [forbidden.flow] 
+					return new ReaderMessage(ReaderMessage.TYPE_RESPONSE, rm.name, rm.id, new ResponseArguments(responses));
+					                                                                                            ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ProtocolResponses 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:567: error: [method.invocation.invalid] call to getMessage() not allowed on the given receiver.
+				if(e.getMessage().contains("Command failed:") && e.getSW() == 0x6982) {
+				               ^
+  found   : @Sink({}) @Source("ANY") CardServiceException
+  required: @Sink("ANY") @Source("ANY") CardServiceException
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:567: error: [method.invocation.invalid] call to getSW() not allowed on the given receiver.
+				if(e.getMessage().contains("Command failed:") && e.getSW() == 0x6982) {
+				                                                        ^
+  found   : @Sink({}) @Source("ANY") CardServiceException
+  required: @Sink("ANY") @Source("ANY") CardServiceException
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:622: error: [argument.type.incompatible] incompatible types in argument.
+		Log.i(TAG, "PIN entered: " + dialogPincode);
+		                           ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("WRITE_LOGS") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:643: error: [argument.type.incompatible] incompatible types in argument.
+			args.putString("message", message);
+			                          ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("BUNDLE") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:644: error: [argument.type.incompatible] incompatible types in argument.
+			args.putString("title", title);
+			                        ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("BUNDLE") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:652: error: [argument.type.incompatible] incompatible types in argument.
+			.setTitle(getArguments().getString("title"))
+			                                  ^
+  found   : @Sink({}) @Source("BUNDLE") String
+  required: @Sink("DISPLAY") @Source({}) CharSequence
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/MainActivity.java:651: error: [argument.type.incompatible] incompatible types in argument.
+			builder.setMessage(getArguments().getString("message"))
+			                                           ^
+  found   : @Sink({}) @Source("BUNDLE") String
+  required: @Sink("DISPLAY") @Source({}) CharSequence
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:26: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.type = type;
+		            ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:27: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.name = name;
+		            ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:31: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.type = type;
+		            ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:32: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.name = name;
+		            ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:33: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.id = id;
+		          ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:37: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.type = type;
+		            ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:38: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.name = name;
+		            ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:39: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.id = id;
+		          ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/messages/ReaderMessage.java:40: error: [assignment.type.incompatible] incompatible types in assignment.
+		this.arguments = arguments;		
+		                 ^
+  found   : @Sink({}) @Source("ANY") ReaderMessageArguments
+  required: @Sink("ANY") @Source({}) ReaderMessageArguments
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ConfirmationDialogFragment.java:22: error: [argument.type.incompatible] incompatible types in argument.
+		args.putString("message", message);
+		                          ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("BUNDLE") @Source({}) String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ConfirmationDialogFragment.java:30: error: [argument.type.incompatible] incompatible types in argument.
+        builder.setMessage(getArguments().getString("message"))
+                                                   ^
+  found   : @Sink({}) @Source("BUNDLE") String
+  required: @Sink("DISPLAY") @Source({}) CharSequence
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ConfirmationDialogFragment.java:52: error: [assignment.type.incompatible] incompatible types in assignment.
+            mListener = (ConfirmationDialogListener) activity;
+                        ^
+  found   : @Sink({}) @Source("ANY") ConfirmationDialogListener
+  required: @Sink("ANY") @Source({}) ConfirmationDialogListener
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ConfirmationDialogFragment.java:56: error: [argument.type.incompatible] incompatible types in argument.
+                    + " must implement PINDialogListener");
+                    ^
+  found   : @Sink({}) @Source("ANY") String
+  required: @Sink("ANY") @Source("ANY") String
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ConfirmationDialogFragment.java:55: error: [forbidden.flow] 
+            throw new ClassCastException(activity.toString()
+                  ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ClassCastException 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolCommandDeserializer.java:22: error: [forbidden.flow] 
+		return new ProtocolCommand(
+		       ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") ProtocolCommand 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolCommandDeserializer.java:23: error: [forbidden.flow] 
+				json.getAsJsonObject().get("key").getAsString(), "",
+				                                             ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") String 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolCommandDeserializer.java:23: error: [method.invocation.invalid] call to getAsJsonObject() not allowed on the given receiver.
+				json.getAsJsonObject().get("key").getAsString(), "",
+				                    ^
+  found   : @Sink({}) @Source("ANY") JsonElement
+  required: @Sink("ANY") @Source("ANY") JsonElement
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolCommandDeserializer.java:24: error: [forbidden.flow] 
+				new CommandAPDU(Hex.hexStringToBytes(json.getAsJsonObject().get("command").getAsString())));
+				^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") CommandAPDU 
+  forbidden flows:
+    ANY -> ANY 
+/home/laptop/Documents/Bachelor-Scriptie/Irma-Application/irmaproxychecker/src/org/irmacard/androidcardproxy/ProtocolCommandDeserializer.java:24: error: [forbidden.flow] 
+				new CommandAPDU(Hex.hexStringToBytes(json.getAsJsonObject().get("command").getAsString())));
+				                                    ^
+  flow forbidden by flow-policy  
+  found: @Sink("ANY") @Source("ANY") byte @Sink("ANY") @Source("ANY") [] 
+  forbidden flows:
+    ANY -> ANY 
+100 errors
